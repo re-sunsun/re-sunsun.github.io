@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>DRY原则</title>
-    <url>/2022/03/25/DRY%E5%8E%9F%E5%88%99/</url>
-    <content><![CDATA[<h1 id="DRY原则"><a href="#DRY原则" class="headerlink" title="DRY原则"></a>DRY原则</h1><blockquote>
-<p>Don’t repeat yourself</p>
-</blockquote>
-<p>不要重复自己</p>
-<span id="more"></span>
-
-<h2 id="实现逻辑重复"><a href="#实现逻辑重复" class="headerlink" title="实现逻辑重复"></a>实现逻辑重复</h2><h2 id="功能语义重复"><a href="#功能语义重复" class="headerlink" title="功能语义重复"></a>功能语义重复</h2><h2 id="代码执行重复"><a href="#代码执行重复" class="headerlink" title="代码执行重复"></a>代码执行重复</h2>]]></content>
-  </entry>
-  <entry>
     <title>.DS_Store泄漏</title>
     <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
     <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
@@ -32,6 +21,11 @@
 ]]></content>
   </entry>
   <entry>
+    <title>TODO</title>
+    <url>/2077/12/04/TODO/</url>
+    <content><![CDATA[<h1 id="目前博客还没有搬过来，考完再说"><a href="#目前博客还没有搬过来，考完再说" class="headerlink" title="目前博客还没有搬过来，考完再说"></a>目前博客还没有搬过来，考完再说</h1>]]></content>
+  </entry>
+  <entry>
     <title>Death Stranding 岛の史诗</title>
     <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
     <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
@@ -47,93 +41,12 @@
       </tags>
   </entry>
   <entry>
-    <title>TODO</title>
-    <url>/2077/12/04/TODO/</url>
-    <content><![CDATA[<h1 id="目前博客还没有搬过来，考完再说"><a href="#目前博客还没有搬过来，考完再说" class="headerlink" title="目前博客还没有搬过来，考完再说"></a>目前博客还没有搬过来，考完再说</h1>]]></content>
-  </entry>
-  <entry>
-    <title>golang1.18版本解读</title>
-    <url>/2022/03/25/golang1-18%E7%89%88%E6%9C%AC%E8%A7%A3%E8%AF%BB/</url>
-    <content><![CDATA[<h1 id="golang1-18版本解读"><a href="#golang1-18版本解读" class="headerlink" title="golang1.18版本解读"></a>golang1.18版本解读</h1><h2 id="泛型-generic"><a href="#泛型-generic" class="headerlink" title="泛型-generic"></a>泛型-generic</h2><p>go中有interface{}，interface{}很好用，我曾经一度把它当成泛型来用。但是interface{}不是泛型</p>
-<p>这段时间了解了一下DRY原则，不禁感叹，通过interface{}来处理出入参，更多的时候只是把压力由编写大量逻辑重复的函数转为了一个复杂的body。</p>
-<span id="more"></span>
-
-<p><strong>泛型能做，interface{}不能做</strong></p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">t</span><span class="params">(a,b <span class="keyword">interface</span>&#123;&#125;)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>我:看到这个函数，我磨拳擦掌准备大展身手，来吧，断言，反射，说出你的业务需求。</p>
-<p><strong>产品:返回a+b的和</strong></p>
-<p>我:这简单讷，ab断言成int然后相加return就行了。</p>
-<p><strong>产品:ab可能是int也有可能是float，也可能是string之类的，如果是string的话就返回它的拼接字符串…</strong></p>
-<p>？？？什么鬼需求，谁做啊。</p>
-<p><strong>产品:我看你就是不会做</strong></p>
-<p>我:当然不想做是一回事，会不会做是另一回事。</p>
-<p>让我想想，反射出来，switch一下type，分情况处理吧。</p>
-</blockquote>
-<p>这就引出了一个问题，如果不用interface{}</p>
-<p>那么这个需求可能要这么写</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addInt</span><span class="params">(a,b <span class="type">int</span>)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addFloat</span><span class="params">(a,b float)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>如果用interface{}呢</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(a,b <span class="keyword">interface</span>&#123;&#125;)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">switch</span> valueOf.Type().Kind() &#123;</span><br><span class="line">    <span class="keyword">case</span> reflect.String:</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">case</span> reflect.Int:</span><br><span class="line">    ...</span><br><span class="line">	&#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用interface避免了重复的函数的编写，但是interface太”自由”了，稍微复杂一点的需求就会要求大量的人工的诸如类型判断等预处理。有没有一种方法，简单的一些设置就能实现高利用率呢？</p>
-<p>所以引入了泛型</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>golang</tag>
-        <tag>后端</tag>
-        <tag>1.18</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>叠加原理</title>
     <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
 <h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
       <tags>
         <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面向对象为什么面向对象</title>
-    <url>/2022/03/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1>]]></content>
-      <tags>
-        <tag>面向对象</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>设计模式-观察者模式</title>
-    <url>/2022/04/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><blockquote>
-<p>当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知依赖它的对象。观察者模式属于行为型模式。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>分布式微服务有一个问题在做集群架构的时候就会凸显出来，去不去中心，哪里去中心哪里不去中心，怎么去中心。而观察者模式，则是我解决这个问题所借鉴的模式之一。</p>
-<p>我的一个框架octopus，在做中心服务集群设计的时候就遇到过这个问题。</p>
-<p>这里我提出一个概念，公园模型。</p>
-<p>公园模型有这么几个重要的对象</p>
-<ul>
-<li>公园管理者：公园管理者掌握所有导游与游客的信息，同时对导游与游客进行划分。</li>
-<li>导游：导游只掌握自己应该知道的信息，同时引导游客的行为。</li>
-<li>游客：游客仅知道自己的导游信息，在导游的引导下进行活动。</li>
-</ul>
-<p>中心就好比公园管理者，其下拥有的服务集群好比导游，链路上游的服务好比游客。</p>
-<p>当服务请求至中心，会由中心处理分配给下一个服务提供者，然后在该服务提供者的带领下完成服务。</p>
-<p>服务提供者，游客在过程中没有对等端，其行动都由更高级的端进行分配。</p>
-<p>在这个模式下，中心作为被观察者中的被观察者，如同公园管理者一样，</p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-        <tag>观察者</tag>
       </tags>
   </entry>
 </search>
