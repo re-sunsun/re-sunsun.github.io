@@ -28,7 +28,7 @@
 <meta property="og:description" content="观察者模式 当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知依赖它的对象。观察者模式属于行为型模式。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-01T07:02:27.000Z">
-<meta property="article:modified_time" content="2022-04-02T17:06:05.536Z">
+<meta property="article:modified_time" content="2022-04-04T00:56:24.098Z">
 <meta property="article:author" content="sunsun">
 <meta property="article:tag" content="设计模式">
 <meta property="article:tag" content="观察者">
@@ -225,13 +225,14 @@
 <p>公园模型有这么几个重要的对象</p>
 <ul>
 <li>公园管理者：公园管理者掌握所有导游与游客的信息，同时对导游与游客进行划分。</li>
-<li>导游：导游只掌握自己应该知道的信息，同时引导游客的行为。</li>
-<li>游客：游客仅知道自己的导游信息，在导游的引导下进行活动。</li>
+<li>导游：导游只掌握自己应该知道的信息，同时带领游客进行活动。</li>
+<li>游客：游客仅知道自己的导游信息，在导游的带领下进行活动。</li>
 </ul>
 <p>中心就好比公园管理者，其下拥有的服务集群好比导游，链路上游的服务好比游客。</p>
-<p>当服务请求至中心，会由中心处理分配给下一个服务提供者，然后在该服务提供者的带领下完成服务。</p>
+<p>当服务请求至中心，会由中心处理分配给服务提供者，然后在该服务提供者的带领下完成服务。</p>
 <p>服务提供者，游客在过程中没有对等端，其行动都由更高级的端进行分配。</p>
-<p>在这个模式下，中心作为被观察者中的被观察者，如同公园管理者一样，</p>
+<p>在这个模式下，中心作为被观察者中的被观察者，如同公园管理者一样，这一举动将服务集群间的互相依赖转为了对中心的依赖，从而达到服务层面的去中心化。</p>
+<p>同时，基于观察者模式的思想与特性可以做出很多其他的设计，比如负载均衡，中心发出任务，空闲的服务机监听到这一信息以后主动的去承接任务等等。</p>
 
       </div>
       
@@ -309,7 +310,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -322,7 +323,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
