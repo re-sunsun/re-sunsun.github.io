@@ -28,7 +28,7 @@
 <meta property="og:description" content="golang1.18版本解读泛型-genericgo中有interface{}，interface{}很好用，我曾经一度把它当成泛型来用。但是interface{}不是泛型 这段时间了解了一下DRY原则，不禁感叹，通过interface{}来处理出入参，更多的时候只是把压力由编写大量逻辑重复的函数转为了一个复杂的body。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-25T01:38:10.000Z">
-<meta property="article:modified_time" content="2022-04-01T01:14:41.778Z">
+<meta property="article:modified_time" content="2022-04-05T11:10:54.381Z">
 <meta property="article:author" content="sunsun">
 <meta property="article:tag" content="golang">
 <meta property="article:tag" content="后端">
@@ -241,7 +241,27 @@
 
 <p>使用interface避免了重复的函数的编写，但是interface太”自由”了，稍微复杂一点的需求就会要求大量的人工的诸如类型判断等预处理。有没有一种方法，简单的一些设置就能实现高利用率呢？</p>
 <p>所以引入了泛型</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span></span> </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       </div>
@@ -320,7 +340,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -333,7 +353,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

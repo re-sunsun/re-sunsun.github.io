@@ -21,6 +21,21 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Death Stranding 岛の史诗</title>
+    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
+    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
+<blockquote>
+<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+</blockquote>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>墙里的第九艺术</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>R</title>
     <url>/2022/04/04/R/</url>
     <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
@@ -65,6 +80,25 @@
       </tags>
   </entry>
   <entry>
+    <title>TODO</title>
+    <url>/2077/12/04/TODO/</url>
+    <content><![CDATA[<h1 id="目前博客还没有搬过来，考完再说"><a href="#目前博客还没有搬过来，考完再说" class="headerlink" title="目前博客还没有搬过来，考完再说"></a>目前博客还没有搬过来，考完再说</h1>]]></content>
+  </entry>
+  <entry>
+    <title>区块链</title>
+    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>麻将才是最早的区块链项目</p>
+<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
+</blockquote>
+<span id="more"></span>
+
+]]></content>
+      <tags>
+        <tag>区块链</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>叠加原理</title>
     <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
@@ -74,23 +108,78 @@
       </tags>
   </entry>
   <entry>
-    <title>TODO</title>
-    <url>/2077/12/04/TODO/</url>
-    <content><![CDATA[<h1 id="目前博客还没有搬过来，考完再说"><a href="#目前博客还没有搬过来，考完再说" class="headerlink" title="目前博客还没有搬过来，考完再说"></a>目前博客还没有搬过来，考完再说</h1>]]></content>
-  </entry>
-  <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+    <title>计算机是如何启动的?</title>
+    <url>/2022/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E7%9A%84/</url>
+    <content><![CDATA[<blockquote>
+<p>“pull oneself up by one’s bootstraps”</p>
 </blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
+<span id="more"></span>
+
+<h1 id="why-boot"><a href="#why-boot" class="headerlink" title="why boot?"></a>why boot?</h1><p>reboot，在我刚接触linux的时候学到了这个命令。boot，意味启动，原意为靴子。</p>
+<p><strong>靴子跟启动是怎么联系起来的呢？</strong></p>
+<p>boot实际上是bootstrap（鞋子背带）的缩写。</p>
+<blockquote>
+<p>“pull oneself up by one’s bootstraps”最初来自于《The Surprising Adventures of Baron Munchausen》这本书里的一个故事：主人公Baron Munchausen不小心掉进了一片沼泽，他通过自己的bootstraps将自己拉了出来（当然有童话神奇的色彩）。事实上在19世纪初美国就有”pull oneself over a fence by one’s bootstraps”的语言，意思是“做荒谬不可能完成的事情”。</p>
+</blockquote>
+<p>计算机的启动时一个矛盾的过程：必须先运行程序，才能启动计算机，但是计算机不启动的话就无法运行程序。</p>
+<p>早期的时候，工程师们想尽各种办法，把一段程序先装进内存，然后计算机才能正常启动。这个过程被比喻为为拉鞋带（bootstrap）。</p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>计算机的启动过程可以分为四个阶段</p>
+<h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>上世纪70年代，只读内存ROM（read-only memory）被发明出来，开机程序被刷入ROM芯片中</p>
+<p>计算机通电以后，干的第一件事情就是去读取它。</p>
+<blockquote>
+<p>谁去读取的BIOS</p>
+</blockquote>
+<p>这块芯片中的程序被称为 基本输出输入系统（basic input&#x2F;output system），也就是简称后的BIOS。</p>
+<p>BIOS被读取之后干了这么几件事</p>
+<ol>
+<li><p><strong>硬件自检</strong></p>
+<p>BIOS先对计算机硬件进行检查以确保其能满足计算机的运行条件，称为 硬件自检POST（Power-On Self-Test）。</p>
+</li>
+<li><p><strong>基于启动顺序移交控制权</strong></p>
+<p>在硬件自检后，BIOS需要将控制权交给下一阶段的启动程序。</p>
+<p>交给谁，交到哪。BIOS需要一个外部存储设备的排序，排在前的设备就是优先转交控制权的设备。这种排序被称为 启动顺序（Boot Sequence）</p>
+</li>
+</ol>
+<h2 id="主引导记录"><a href="#主引导记录" class="headerlink" title="主引导记录"></a>主引导记录</h2><p>BIOS按照启动顺序将控制权移交给排在第一位的存储设备。</p>
+<p>计算器去读取这个设备的第一个扇区（最前面的512个字节）。如果这512个字节的最后两个字节是0x55与0xAA，则表示这个设备可以用于启动，如果不是则控制权顺序移交至下一位。</p>
+<p>这512个字节，称为 主引导记录（Master boot record）,是采用MBR分区表的硬盘的第一个扇区。</p>
+<p>主引导记录的主要作用是:告诉计算机到硬盘的哪一个位置去寻找操作系统。</p>
+<p>主引导记录分为三部分</p>
+<ul>
+<li>1-446字节：调用操作系统的机械码</li>
+<li>447-510字节：分区表（Partition table）</li>
+<li>511-512字节：主引导签名（0x55，0xAA）</li>
+</ul>
+<p>分区表的作用是将硬盘分成若干个区，分区表的长度为64个字节，其又分成四项，每项16个字节。一个硬盘最多分为四个一级区，也叫做主分区。</p>
+<p>每个分区是16个字节，由六个部分组成：</p>
+<ul>
+<li>1字节：如果为0x80，则表明该分区是激活分区，控制权将交由该分区。四个主分区中只能有一个是激活的</li>
+<li>2-4字节：主分区第一个扇区的物理位置（柱面，磁头，扇区号等等）</li>
+<li>5字节：主分区类型</li>
+<li>6-8字节：主分区最后一个扇区的物理位置。</li>
+<li>9-12字节：该主分区第一个扇区的逻辑地址</li>
+<li>13-16字节：主分区的扇区总数</li>
+</ul>
+<p>由四个字节决定了扇区总数，一个字节八个bit，也就是扇区的总数最多是2的32次方（4294967296），按照每个扇区是512个字节，即最多存储2199023255552个字节,也就是2147483648kb,2097152mb,2048GB,2TB。</p>
+<h2 id="硬盘启动"><a href="#硬盘启动" class="headerlink" title="硬盘启动"></a>硬盘启动</h2><p>计算机的控制权将交由硬盘的某个分区，又可分成三种情况</p>
+<ul>
+<li><p>卷引导记录VBR（Volume boot record）</p>
+<p>四个主分区只有一个分区是激活的，计算机会读取激活分区的第一个扇区，称为卷引导记录VBR。</p>
+<p>卷引导记录的作用是告诉计算机，操作系统在这个分区的位置，然后计算机就会去加载操作系统。</p>
+</li>
+<li><p>扩展分区与逻辑分区</p>
+<p>当四个主分区不足时，我们需要更多的分区。但是分区表仅有四项，因此规定有且仅有一个区可以被定义为 扩展分区（Extended partition）。</p>
+<p>扩展分区中又分成多个区，这种区称为逻辑分区（logical partition）。</p>
+<p>计算机先读取扩展分区的第一个扇区，扩展引导记录EBR（extended boot record）。其内有一张64字节的分区表，但是最多只有两项（即两个逻辑分区）。</p>
+<p>再读取第二个逻辑分区的第一个扇区从其的分区表中找出第三个逻辑分区的位置，以此类推知道某个逻辑分区的分区表只包含它自身。</p>
+</li>
+<li><p>启动管理器(boot loader)</p>
+<p>在计算机读取主引导记录前446字节的机械码之后，不再将控制权移交给某一个分区，而是运行启动管理器，由用户选择启动哪一个操作系统。</p>
+</li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>控制权交由操作系统后，操作系统的内核首先被载入内存。</p>
+<p>如Linux，内核载入成功后，运行&#x2F;sbin&#x2F;init，其根据配置文件产生init进程，pid为1。然后init线程加载系统的各个模块，直至执行&#x2F;bin&#x2F;login，跳出登陆界面，由用户输入账号密码。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？ - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+]]></content>
   </entry>
 </search>
