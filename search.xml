@@ -85,6 +85,24 @@
     <content><![CDATA[<h1 id="目前博客还没有搬过来，考完再说"><a href="#目前博客还没有搬过来，考完再说" class="headerlink" title="目前博客还没有搬过来，考完再说"></a>目前博客还没有搬过来，考完再说</h1>]]></content>
   </entry>
   <entry>
+    <title>全局唯一标识分区表GPT</title>
+    <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
+    <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
+<p>小明一直以来都致力于支持一线老师们的演艺事业，多年来存下来超多的演艺资源。</p>
+<p>这也导致老师们纷纷抱怨道，现在的房子太小，太拥挤。于是小明购入了一块4T的硬盘，可是装上硬盘以后坏了。原本4T的硬盘现在只有2T的使用率，完蛋，这个问题不解决的话老师们住哪里?</p>
+</blockquote>
+<span id="more"></span>
+
+<p>MBR系统中通过四个字节来表明分区的扇区总数，经过计算可以得知，以512字节的扇区为基准。MBR系统所支持的最大磁盘容量是2T。</p>
+<p>如何突破这一上线？</p>
+<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区 ✖️ 扇区大小</p>
+<p>想要提高最大容量就可以从这两方面入手。</p>
+<h1 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h1>]]></content>
+      <tags>
+        <tag>磁盘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>区块链</title>
     <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
     <content><![CDATA[<blockquote>
