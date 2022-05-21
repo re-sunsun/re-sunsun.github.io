@@ -21,19 +21,23 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+    <title>区块链</title>
+    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>麻将才是最早的区块链项目</p>
+<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
 </blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
+<span id="more"></span>
+
+]]></content>
       <tags>
-        <tag>游戏</tag>
+        <tag>区块链</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>TODO</title>
+    <url>/2077/12/04/TODO/</url>
+    <content><![CDATA[<h1 id="目前博客还没有搬过来"><a href="#目前博客还没有搬过来" class="headerlink" title="目前博客还没有搬过来"></a>目前博客还没有搬过来</h1>]]></content>
   </entry>
   <entry>
     <title>R</title>
@@ -80,9 +84,19 @@
       </tags>
   </entry>
   <entry>
-    <title>TODO</title>
-    <url>/2077/12/04/TODO/</url>
-    <content><![CDATA[<h1 id="目前博客还没有搬过来，考完再说"><a href="#目前博客还没有搬过来，考完再说" class="headerlink" title="目前博客还没有搬过来，考完再说"></a>目前博客还没有搬过来，考完再说</h1>]]></content>
+    <title>Death Stranding 岛の史诗</title>
+    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
+    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
+<blockquote>
+<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+</blockquote>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>墙里的第九艺术</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
   </entry>
   <entry>
     <title>全局唯一标识分区表GPT</title>
@@ -95,25 +109,24 @@
 
 <p>MBR系统中通过四个字节来表明分区的扇区总数，经过计算可以得知，以512字节的扇区为基准。MBR系统所支持的最大磁盘容量是2T。</p>
 <p>如何突破这一上线？</p>
-<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区 ✖️ 扇区大小</p>
+<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区数 ✖️ 扇区大小</p>
 <p>想要提高最大容量就可以从这两方面入手。</p>
-<h1 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h1>]]></content>
-      <tags>
-        <tag>磁盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链</title>
-    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
-    <content><![CDATA[<blockquote>
-<p>麻将才是最早的区块链项目</p>
-<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
+<h2 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h2><p>根据几个古早的规定协议，扇区的大小被约定为512字节</p>
+<blockquote>
+<p>1956年由industry trade organization, International Disk Drive Equipment和Materials Association三家机构确定的行业标准</p>
+<p>有时代和技术的限制，因为磁盘技术发展初期，存储容量非常小。512字节的扇区也够用，但是随着时代的发展，512字节大小的扇区（Sector）明显太小了，由于每个扇区（Sector）还要存放很多其他信息，因此增大sector size可以降低扇区（Sector）的数量，从而提高实际存储量，同时降低了差错校验等很多CPU计算量。但遗憾的是<strong>由于这个标准太根深蒂固，要想改变一些底层代码或架构势必非常困难，所以现在4KB扇区硬盘暂时还没有全部普及</strong>。</p>
 </blockquote>
-<span id="more"></span>
+<p>现在市面上2T以上的硬盘基本上都是以4KB做为扇区大小。</p>
+<p>你也可以通过简单的指令查看自己的硬盘的情况，以macos举例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br><span class="line">diskutil info &#123;location of your disk&#125;</span><br><span class="line"></span><br><span class="line">Device Block Size:         512 Bytes</span><br></pre></td></tr></table></figure>
 
+<h2 id="扇区数"><a href="#扇区数" class="headerlink" title="扇区数"></a>扇区数</h2><p>MBR系统有四个字节用于表明扇区数量，也就是2^32。毫无疑问要突破这种限制我们需要一个新的系统</p>
+<blockquote>
+<p>全局唯一标识分区表（GUID Partition Table，缩写：GPT）是指全局唯一标示磁盘分区表格式。它是可扩展固件接口（EFI）标准（被Intel用于替代个人计算机的BIOS）的一部分，<strong>被用于替代BIOS系统中的以32bits来存储逻辑块地址和大小信息的主引导记录（MBR）分区表</strong>。</p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>区块链</tag>
+        <tag>磁盘</tag>
       </tags>
   </entry>
   <entry>
