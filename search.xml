@@ -85,6 +85,26 @@
       </tags>
   </entry>
   <entry>
+    <title>java题目</title>
+    <url>/2022/06/01/java%E9%A2%98%E7%9B%AE/</url>
+    <content><![CDATA[<h2 id="java的特点-x3D-面向对象的特点"><a href="#java的特点-x3D-面向对象的特点" class="headerlink" title="java的特点&#x3D;面向对象的特点"></a>java的特点&#x3D;面向对象的特点</h2><p>封装，继承，多态</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>区块链</title>
+    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>麻将才是最早的区块链项目</p>
+<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
+</blockquote>
+<span id="more"></span>
+
+]]></content>
+      <tags>
+        <tag>区块链</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>全局唯一标识分区表GPT</title>
     <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
     <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
@@ -113,20 +133,6 @@
 ]]></content>
       <tags>
         <tag>磁盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链</title>
-    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
-    <content><![CDATA[<blockquote>
-<p>麻将才是最早的区块链项目</p>
-<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
-</blockquote>
-<span id="more"></span>
-
-]]></content>
-      <tags>
-        <tag>区块链</tag>
       </tags>
   </entry>
   <entry>
