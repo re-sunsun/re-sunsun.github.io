@@ -21,6 +21,27 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Death Stranding 岛の史诗</title>
+    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
+    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
+<blockquote>
+<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+</blockquote>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>墙里的第九艺术</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TODO</title>
+    <url>/2077/12/04/TODO/</url>
+    <content><![CDATA[<h1 id="目前博客还没有搬过来"><a href="#目前博客还没有搬过来" class="headerlink" title="目前博客还没有搬过来"></a>目前博客还没有搬过来</h1><p><img src="https://raw.githubusercontent.com/re-sunsun/image/master/blog/bg/theone.png"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>R</title>
     <url>/2022/04/04/R/</url>
     <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
@@ -65,94 +86,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
-</blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TODO</title>
-    <url>/2077/12/04/TODO/</url>
-    <content><![CDATA[<h1 id="目前博客还没有搬过来"><a href="#目前博客还没有搬过来" class="headerlink" title="目前博客还没有搬过来"></a>目前博客还没有搬过来</h1><p><img src="https://raw.githubusercontent.com/re-sunsun/image/master/blog/bg/theone.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>java题目</title>
-    <url>/2022/06/01/java%E9%A2%98%E7%9B%AE/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="java的特点-x3D-面向对象的特点"><a href="#java的特点-x3D-面向对象的特点" class="headerlink" title="java的特点&#x3D;面向对象的特点"></a>java的特点&#x3D;面向对象的特点</h2><p>封装，继承，多态</p>
-<h2 id="java数据类型"><a href="#java数据类型" class="headerlink" title="java数据类型"></a>java数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ul>
-<li>整数型</li>
-</ul>
-<p>​        byte     1字节</p>
-<p>​        short    2字节</p>
-<p>​        int        4字节</p>
-<p>​        long     8字节</p>
-<ul>
-<li>浮点型</li>
-</ul>
-<p>​        float     4字节</p>
-<p>​        double 8字节</p>
-<ul>
-<li><p>字符型</p>
-<p>char 2字节（C语言中是1字节）</p>
-</li>
-<li><p>布尔型</p>
-</li>
-</ul>
-<p>​        boolean 1字节</p>
-<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//类:  class</span></span><br><span class="line"><span class="comment">//接口:interface</span></span><br><span class="line"><span class="comment">//数组:[]</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h2 id="3-1类之间的关系"><a href="#3-1类之间的关系" class="headerlink" title="3.1类之间的关系"></a>3.1类之间的关系</h2><p>依赖、关联、聚合、组合、继承、实现</p>
-<h2 id="3-2-2如何实现单例模式"><a href="#3-2-2如何实现单例模式" class="headerlink" title="3.2.2如何实现单例模式"></a>3.2.2如何实现单例模式</h2><p>单例模式指的是在<strong>应用整个生命周期内只能存在一个实例</strong>。</p>
-<p><strong>优点</strong>:能够避免实例对象的重复创建，减少创建实例的系统开销，节省内存。</p>
-<p>单例模式与静态类(如math)是不同的，单例模式会提供给你一个全局唯一的对象，静态类只是提供给你很多静态方法，这些方法不用创建对象，通过类就可以直接调用。</p>
-<p><strong>单例模式的实现</strong>(单例有几种实现方法):</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SingletonHungary</span> &#123;</span><br><span class="line">	<span class="comment">//唯一实例在类load的时候就已经产生了</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">SingletonHungary</span> <span class="variable">singletonHungary</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SingletonHungary</span>();</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//将构造器设置为private禁止通过new进行实例化</span></span><br><span class="line">	<span class="comment">//这一步确保了单例的唯一性</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">SingletonHungary</span><span class="params">()</span> &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//获取这个实例</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> SingletonHungary <span class="title function_">getInstance</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> singletonHungary;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>这种代码很简单，解释在注释里</p>
-<h2 id="4-1-5-继承的利弊与使用原则"><a href="#4-1-5-继承的利弊与使用原则" class="headerlink" title="4.1.5 继承的利弊与使用原则"></a>4.1.5 继承的利弊与使用原则</h2><p><strong>优点</strong>:提高程序代码的可重用性、以及提高系统的可扩展性的有效手段。</p>
-<p><strong>缺点</strong>:如果继承树非常复杂、或者随便扩展本来不是专门为继承而设计的类，反而会削弱系统的可扩展性和可维护性。</p>
-<p><strong>使用原则</strong>:</p>
-<ul>
-<li><p><strong>继承树的层次不可太多</strong></p>
-<p>层次多了复杂</p>
-</li>
-<li><p><strong>继承树的上层为抽象层</strong></p>
-<p>比如一个抽象类human，一个实现类man，做传递的时候肯定是传递的human</p>
-</li>
-<li><p><strong>继承关系最大的弱点：打破封装</strong></p>
-</li>
-<li><p><strong>精心设计专门用于被继承的类</strong></p>
-</li>
-</ul>
-<h2 id="4-2-4-接口与抽象类"><a href="#4-2-4-接口与抽象类" class="headerlink" title="4.2.4 接口与抽象类"></a>4.2.4 接口与抽象类</h2><p>首先来认识接口跟抽象类</p>
-<p>一个类只能继承(extends)一个抽象类，但可以实现(implements)多个接口。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Person1</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">print1</span><span class="params">()</span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Person2</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">print2</span><span class="params">()</span>&#123;</span><br><span class="line">        print(<span class="string">&quot;123&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">man</span> <span class="keyword">extends</span> <span class="title class_">Person2</span> <span class="keyword">implements</span> <span class="title class_">Person1</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>简单的来说：</p>
-<p>抽象类可以带普通方法（去实现它），接口类只能声明。</p>
-<h2 id="4-4-多态"><a href="#4-4-多态" class="headerlink" title="4.4 多态"></a>4.4 多态</h2><p>一个类、接口可以被多个子类同时继承</p>
-<p>每个子类不同的自实现称为多态</p>
-<h2 id="5-4-1如何实现一个"><a href="#5-4-1如何实现一个" class="headerlink" title="5.4.1如何实现一个"></a>5.4.1如何实现一个</h2><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>java的异常处理机制</p>
-<p>异常处理的实现</p>
-<h2 id="流"><a href="#流" class="headerlink" title="流"></a>流</h2><p>在java中所有数据都是使用流读写的。流是一组有序的数据序列，将数据从一个地方带到另一个地方。根据数据流向的不同，可以分为输入（Input）流和输出（Output）流两种。</p>
-<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><h2 id="对象的序列化与反序列化-接口"><a href="#对象的序列化与反序列化-接口" class="headerlink" title="对象的序列化与反序列化-接口"></a>对象的序列化与反序列化-接口</h2><h2 id="8-3-3"><a href="#8-3-3" class="headerlink" title="8.3.3"></a>8.3.3</h2><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p><strong>Java 提供了三种创建线程的方法：</strong></p>
-<h3 id="通过实现-Runnable-接口；"><a href="#通过实现-Runnable-接口；" class="headerlink" title="通过实现 Runnable 接口；"></a>通过实现 Runnable 接口；</h3><h3 id="通过继承-Thread-类本身；"><a href="#通过继承-Thread-类本身；" class="headerlink" title="通过继承 Thread 类本身；"></a>通过继承 Thread 类本身；</h3><h3 id="通过-Callable-和-Future-创建线程。"><a href="#通过-Callable-和-Future-创建线程。" class="headerlink" title="通过 Callable 和 Future 创建线程。"></a>通过 Callable 和 Future 创建线程。</h3><h2 id="线程与进程"><a href="#线程与进程" class="headerlink" title="线程与进程"></a>线程与进程</h2><h2 id="线程的状态与生命周期"><a href="#线程的状态与生命周期" class="headerlink" title="线程的状态与生命周期"></a>线程的状态与生命周期</h2><h2 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h2><h2 id="9-3线程同步"><a href="#9-3线程同步" class="headerlink" title="9.3线程同步"></a>9.3线程同步</h2><h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><h2 id="tcp编程"><a href="#tcp编程" class="headerlink" title="tcp编程"></a>tcp编程</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/u014672511/article/details/79774847">(56条消息) Java实现单例的5种方式_scuwangjun的博客-CSDN博客_java单例</a></p>
-<p><a href="http://www.javathinker.net/bbs_topic.do?postID=239">【Java基础编程专题】Java继承的利弊和使用原则 (javathinker.net)</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>全局唯一标识分区表GPT</title>
     <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
     <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
@@ -181,36 +114,6 @@
 ]]></content>
       <tags>
         <tag>磁盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链</title>
-    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
-    <content><![CDATA[<blockquote>
-<p>麻将才是最早的区块链项目</p>
-<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
-</blockquote>
-<span id="more"></span>
-
-]]></content>
-      <tags>
-        <tag>区块链</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>规范</title>
-    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>叠加原理</title>
-    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
-<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
-      <tags>
-        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -294,5 +197,35 @@
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？ - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 <p><a href="https://blog.csdn.net/weixin_43590389/article/details/104094234"></a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>叠加原理</title>
+    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
+<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>规范</title>
+    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>区块链</title>
+    <url>/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>麻将才是最早的区块链项目</p>
+<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
+</blockquote>
+<span id="more"></span>
+
+]]></content>
+      <tags>
+        <tag>区块链</tag>
+      </tags>
   </entry>
 </search>
