@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>.DS_Store泄漏</title>
-    <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
-    <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
-<span id="more"></span>
-
-<h1 id="DS-Store文件是什么"><a href="#DS-Store文件是什么" class="headerlink" title=".DS_Store文件是什么"></a>.DS_Store文件是什么</h1><p>DS_Store 全称 Desktop Service Store,即桌面服务存储，是一种由macOS系统创建的隐藏文件，用于保存文件夹自定义的属性如图标位置或背景色等，类比于win下的desktop.ini。</p>
-<p>DS文件存储了文件相关的信息，这使得它有可能因此造成文件目录结构泄漏或是源代码或其他敏感信息的泄漏，这些泄漏可以被当作攻击手段,如<a href="https://blog.csdn.net/qq_45521281/article/details/105774453">基于DS_Store的安全问题</a></p>
-<h1 id="如何防治"><a href="#如何防治" class="headerlink" title="如何防治"></a>如何防治</h1><p>目前来看，ds文件主要会因为两个途径泄漏</p>
-<ul>
-<li><p>与别人互换文件时</p>
-<p>可以通过禁止全局的ds文件生成来源头性的避免ds文件的泄漏</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用git等工具进行开发时</p>
-<p>采用全局性的.gitignore</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo .DS_Store &gt;&gt; ~/.gitignore_global</span><br><span class="line">git config --global core.excludesfile ~/.gitignore_global</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
-</blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>graduate</title>
-    <url>/2023/06/07/graduate/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>R</title>
     <url>/2022/04/04/R/</url>
     <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
@@ -85,6 +45,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Death Stranding 岛の史诗</title>
+    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
+    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
+<blockquote>
+<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+</blockquote>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>墙里的第九艺术</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>graduate</title>
+    <url>/2023/06/07/graduate/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>.DS_Store泄漏</title>
+    <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
+    <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
+<span id="more"></span>
+
+<h1 id="DS-Store文件是什么"><a href="#DS-Store文件是什么" class="headerlink" title=".DS_Store文件是什么"></a>.DS_Store文件是什么</h1><p>DS_Store 全称 Desktop Service Store,即桌面服务存储，是一种由macOS系统创建的隐藏文件，用于保存文件夹自定义的属性如图标位置或背景色等，类比于win下的desktop.ini。</p>
+<p>DS文件存储了文件相关的信息，这使得它有可能因此造成文件目录结构泄漏或是源代码或其他敏感信息的泄漏，这些泄漏可以被当作攻击手段,如<a href="https://blog.csdn.net/qq_45521281/article/details/105774453">基于DS_Store的安全问题</a></p>
+<h1 id="如何防治"><a href="#如何防治" class="headerlink" title="如何防治"></a>如何防治</h1><p>目前来看，ds文件主要会因为两个途径泄漏</p>
+<ul>
+<li><p>与别人互换文件时</p>
+<p>可以通过禁止全局的ds文件生成来源头性的避免ds文件的泄漏</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用git等工具进行开发时</p>
+<p>采用全局性的.gitignore</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo .DS_Store &gt;&gt; ~/.gitignore_global</span><br><span class="line">git config --global core.excludesfile ~/.gitignore_global</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>todolist-2023</title>
     <url>/2023/01/01/todolist-2023/</url>
     <content><![CDATA[]]></content>
@@ -121,13 +121,11 @@
       </tags>
   </entry>
   <entry>
-    <title>叠加原理</title>
-    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
-<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
-      <tags>
-        <tag>数学</tag>
-      </tags>
+    <title>规范</title>
+    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>区块链</title>
@@ -226,10 +224,12 @@
 ]]></content>
   </entry>
   <entry>
-    <title>规范</title>
-    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
+    <title>叠加原理</title>
+    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
+<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
   </entry>
 </search>
