@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sunsun&#39;blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="fynefyne包结构划分fyne将功能划分到多个子包中：  fyne.io&#x2F;fyne：提供所有fyne应用程序代码共用的基础定义，包括数据类型和接口； fyne.io&#x2F;fyne&#x2F;app：提供创建应用程序的 API； fyne.io&#x2F;fyne&#x2F;canvas：提供Fyne使用的绘制 API； fyne.io&#x2F;fyne&#x2F;dialog：提供对话框组件； fyne.io&#x2F;fyne&#x2F;layout：提供多种界">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fyne">
+<meta property="og:url" content="http://example.com/2024/01/16/fyne/index.html">
 <meta property="og:site_name" content="sunsun&#39;blog">
-<meta property="og:description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice">
+<meta property="og:description" content="fynefyne包结构划分fyne将功能划分到多个子包中：  fyne.io&#x2F;fyne：提供所有fyne应用程序代码共用的基础定义，包括数据类型和接口； fyne.io&#x2F;fyne&#x2F;app：提供创建应用程序的 API； fyne.io&#x2F;fyne&#x2F;canvas：提供Fyne使用的绘制 API； fyne.io&#x2F;fyne&#x2F;dialog：提供对话框组件； fyne.io&#x2F;fyne&#x2F;layout：提供多种界">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-16T02:18:31.000Z">
+<meta property="article:modified_time" content="2024-01-16T02:21:54.103Z">
 <meta property="article:author" content="sunsun">
+<meta property="article:tag" content="fyne">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2024/01/16/fyne/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>sunsun'blog</title>
+  <title>fyne | sunsun'blog</title>
   
 
 
@@ -184,9 +187,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -202,10 +206,9 @@
       <meta itemprop="name" content="sunsun'blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/01/16/fyne/" class="post-title-link" itemprop="url">fyne</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          fyne
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -219,6 +222,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -229,7 +239,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="fyne"><a href="#fyne" class="headerlink" title="fyne"></a>fyne</h1><h2 id="fyne包结构划分"><a href="#fyne包结构划分" class="headerlink" title="fyne包结构划分"></a>fyne包结构划分</h2><p><code>fyne</code>将功能划分到多个子包中：</p>
+        <h1 id="fyne"><a href="#fyne" class="headerlink" title="fyne"></a>fyne</h1><h2 id="fyne包结构划分"><a href="#fyne包结构划分" class="headerlink" title="fyne包结构划分"></a>fyne包结构划分</h2><p><code>fyne</code>将功能划分到多个子包中：</p>
 <ul>
 <li><code>fyne.io/fyne</code>：提供所有<code>fyne</code>应用程序代码共用的基础定义，包括数据类型和接口；</li>
 <li><code>fyne.io/fyne/app</code>：提供创建应用程序的 API；</li>
@@ -376,613 +386,34 @@
 <h2 id="活动流程"><a href="#活动流程" class="headerlink" title="活动流程"></a>活动流程</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a := app.New()</span><br><span class="line">w := a.NewWindow(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//type1</span></span><br><span class="line">w.ShowAndRun()</span><br><span class="line"></span><br><span class="line"><span class="comment">//type2</span></span><br><span class="line">w.Show()</span><br><span class="line">a.Run()</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/fyne/" rel="tag"># fyne</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/07/graduate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/07/graduate/" class="post-title-link" itemprop="url">graduate</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-06-07 01:08:02" itemprop="dateCreated datePublished" datetime="2023-06-07T01:08:02+08:00">2023-06-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/01/todolist-2023/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/01/todolist-2023/" class="post-title-link" itemprop="url">todolist-2023</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-01-01 23:01:40 / 修改时间：23:01:42" itemprop="dateCreated datePublished" datetime="2023-01-01T23:01:40+08:00">2023-01-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/31/%E8%A7%84%E8%8C%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/31/%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">规范</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-05-31 19:26:50 / 修改时间：19:28:08" itemprop="dateCreated datePublished" datetime="2022-05-31T19:26:50+08:00">2022-05-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/" class="post-title-link" itemprop="url">全局唯一标识分区表GPT</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-08 14:43:15" itemprop="dateCreated datePublished" datetime="2022-04-08T14:43:15+08:00">2022-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-10 00:28:36" itemprop="dateModified" datetime="2022-04-10T00:28:36+08:00">2022-04-10</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
-<p>小明一直以来都致力于支持一线老师们的演艺事业，多年来存下来超多的演艺资源。</p>
-<p>这也导致老师们纷纷抱怨道，现在的房子太小，太拥挤。于是小明购入了一块4T的硬盘，可是装上硬盘以后坏了。原本4T的硬盘现在只有2T的使用率，完蛋，这个问题不解决的话老师们住哪里?</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="post-title-link" itemprop="url">区块链</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-04-07 09:21:52 / 修改时间：09:27:16" itemprop="dateCreated datePublished" datetime="2022-04-07T09:21:52+08:00">2022-04-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>麻将才是最早的区块链项目</p>
-<p>四个矿工一组，先碰撞出13个数字正确的哈希值的矿工可以获得记账权并得到奖励</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/07/%E5%8C%BA%E5%9D%97%E9%93%BE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/07/graduate/" rel="prev" title="graduate">
+      <i class="fa fa-chevron-left"></i> graduate
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E7%9A%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E7%9A%84/" class="post-title-link" itemprop="url">计算机是如何启动的?</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-06 19:28:12" itemprop="dateCreated datePublished" datetime="2022-04-06T19:28:12+08:00">2022-04-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-25 15:01:08" itemprop="dateModified" datetime="2022-07-25T15:01:08+08:00">2022-07-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>“pull oneself up by one’s bootstraps”</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E7%9A%84/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/04/R/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/04/R/" class="post-title-link" itemprop="url">R</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-04-04 08:07:05 / 修改时间：15:39:16" itemprop="dateCreated datePublished" datetime="2022-04-04T08:07:05+08:00">2022-04-04</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
-<blockquote>
-<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
-<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/04/R/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">叠加原理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-03-28 15:14:51 / 修改时间：15:22:38" itemprop="dateCreated datePublished" datetime="2022-03-28T15:14:51+08:00">2022-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
-<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">.DS_Store泄漏</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-03-24 14:34:39 / 修改时间：14:55:42" itemprop="dateCreated datePublished" datetime="2022-03-24T14:34:39+08:00">2022-03-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1034,6 +465,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fyne"><span class="nav-number">1.</span> <span class="nav-text">fyne</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fyne%E5%8C%85%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="nav-number">1.1.</span> <span class="nav-text">fyne包结构划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Window"><span class="nav-number">1.2.</span> <span class="nav-text">Window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas"><span class="nav-number">1.3.</span> <span class="nav-text">Canvas</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E6%8C%82%E8%BD%BD%E5%88%B0%E7%94%BB%E5%B8%83%E4%B8%8A"><span class="nav-number">1.3.1.</span> <span class="nav-text">元素挂载到画布上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CanvasObject"><span class="nav-number">1.4.</span> <span class="nav-text">CanvasObject</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rectangle%E7%9F%A9%E5%BD%A2"><span class="nav-number">1.4.1.</span> <span class="nav-text">Rectangle矩形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-%E6%96%87%E6%9C%AC"><span class="nav-number">1.4.2.</span> <span class="nav-text">Text 文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Line%E7%BA%BF"><span class="nav-number">1.4.3.</span> <span class="nav-text">Line线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Circle%E5%9C%86"><span class="nav-number">1.4.4.</span> <span class="nav-text">Circle圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageFromResource%E5%9B%BE%E5%83%8F"><span class="nav-number">1.4.5.</span> <span class="nav-text">ImageFromResource图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RasterWithPixels%E6%A0%85%E6%A0%BC%E4%B8%8E%E5%83%8F%E7%B4%A0"><span class="nav-number">1.4.6.</span> <span class="nav-text">RasterWithPixels栅格与像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient%E6%B8%90%E5%8F%98%E5%9B%BE"><span class="nav-number">1.4.7.</span> <span class="nav-text">Gradient渐变图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Widget"><span class="nav-number">1.5.</span> <span class="nav-text">Widget</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label%E6%A0%87%E7%AD%BE"><span class="nav-number">1.5.2.</span> <span class="nav-text">Label标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button%E6%8C%89%E9%92%AE"><span class="nav-number">1.5.3.</span> <span class="nav-text">Button按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Entry%E8%BE%93%E5%85%A5%E6%A1%86"><span class="nav-number">1.5.4.</span> <span class="nav-text">Entry输入框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Choices-%E9%80%89%E6%8B%A9%E6%A1%86"><span class="nav-number">1.5.5.</span> <span class="nav-text">Choices 选择框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From%E8%A1%A8%E5%8D%95"><span class="nav-number">1.5.6.</span> <span class="nav-text">From表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressBar%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%8E%A7%E4%BB%B6"><span class="nav-number">1.5.7.</span> <span class="nav-text">ProgressBar进度条控件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%92%8C%E5%B8%83%E5%B1%80"><span class="nav-number">1.6.</span> <span class="nav-text">容器和布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Box%E7%9B%92%E5%AD%90"><span class="nav-number">1.6.1.</span> <span class="nav-text">Box盒子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TabContainer%E6%A0%87%E7%AD%BE%E5%AE%B9%E5%99%A8"><span class="nav-number">1.6.2.</span> <span class="nav-text">TabContainer标签容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#theme"><span class="nav-number">1.7.</span> <span class="nav-text">theme</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%BB%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">1.8.</span> <span class="nav-text">活动流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.9.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
