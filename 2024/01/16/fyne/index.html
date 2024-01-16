@@ -28,7 +28,7 @@
 <meta property="og:description" content="fynefyne包结构划分fyne将功能划分到多个子包中：  fyne.io&#x2F;fyne：提供所有fyne应用程序代码共用的基础定义，包括数据类型和接口； fyne.io&#x2F;fyne&#x2F;app：提供创建应用程序的 API； fyne.io&#x2F;fyne&#x2F;canvas：提供Fyne使用的绘制 API； fyne.io&#x2F;fyne&#x2F;dialog：提供对话框组件； fyne.io&#x2F;fyne&#x2F;layout：提供多种界">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-16T02:18:31.000Z">
-<meta property="article:modified_time" content="2024-01-16T02:21:54.103Z">
+<meta property="article:modified_time" content="2024-01-16T02:30:50.728Z">
 <meta property="article:author" content="sunsun">
 <meta property="article:tag" content="fyne">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-01-16 10:18:31 / 修改时间：10:21:54" itemprop="dateCreated datePublished" datetime="2024-01-16T10:18:31+08:00">2024-01-16</time>
+              <time title="创建时间：2024-01-16 10:18:31 / 修改时间：10:30:50" itemprop="dateCreated datePublished" datetime="2024-01-16T10:18:31+08:00">2024-01-16</time>
             </span>
 
           
@@ -248,6 +248,8 @@
 <li><code>fyne.io/fyne/layout</code>：提供多种界面布局；</li>
 <li><code>fyne.io/fyne/widget</code>：提供多种组件，<code>fyne</code>所有的窗体控件和交互元素都在这个子包中。</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h2><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><p>在<code>fyne</code>应用程序中，所有显示元素都是绘制在画布（<code>Canvas</code>）上的。这些元素都是画布对象（<code>CanvasObject</code>）。调用<code>Canvas.SetContent()</code>方法可设置画布内容。<code>Canvas</code>一般和布局（<code>Layout</code>）容器（<code>Container</code>）一起使用。<code>canvas</code>子包中提供了一些基础的画布对象：</p>
 <h3 id="元素挂载到画布上"><a href="#元素挂载到画布上" class="headerlink" title="元素挂载到画布上"></a>元素挂载到画布上</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c := container.New(layout.NewGridLayout(<span class="number">1</span>), rect, text, line, circle, image, raster, gradient)</span><br><span class="line">w.SetContent(c)</span><br></pre></td></tr></table></figure>
 

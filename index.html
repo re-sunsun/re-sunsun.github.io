@@ -215,7 +215,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-01-16 10:18:31 / 修改时间：10:21:54" itemprop="dateCreated datePublished" datetime="2024-01-16T10:18:31+08:00">2024-01-16</time>
+              <time title="创建时间：2024-01-16 10:18:31 / 修改时间：10:30:50" itemprop="dateCreated datePublished" datetime="2024-01-16T10:18:31+08:00">2024-01-16</time>
             </span>
 
           
@@ -238,144 +238,14 @@
 <li><code>fyne.io/fyne/layout</code>：提供多种界面布局；</li>
 <li><code>fyne.io/fyne/widget</code>：提供多种组件，<code>fyne</code>所有的窗体控件和交互元素都在这个子包中。</li>
 </ul>
-<h2 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h2><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><p>在<code>fyne</code>应用程序中，所有显示元素都是绘制在画布（<code>Canvas</code>）上的。这些元素都是画布对象（<code>CanvasObject</code>）。调用<code>Canvas.SetContent()</code>方法可设置画布内容。<code>Canvas</code>一般和布局（<code>Layout</code>）容器（<code>Container</code>）一起使用。<code>canvas</code>子包中提供了一些基础的画布对象：</p>
-<h3 id="元素挂载到画布上"><a href="#元素挂载到画布上" class="headerlink" title="元素挂载到画布上"></a>元素挂载到画布上</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c := container.New(layout.NewGridLayout(<span class="number">1</span>), rect, text, line, circle, image, raster, gradient)</span><br><span class="line">w.SetContent(c)</span><br></pre></td></tr></table></figure>
-
-<h2 id="CanvasObject"><a href="#CanvasObject" class="headerlink" title="CanvasObject"></a>CanvasObject</h2><h3 id="Rectangle矩形"><a href="#Rectangle矩形" class="headerlink" title="Rectangle矩形"></a>Rectangle矩形</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">canvas.NewRectangle(color.Black)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Text-文本"><a href="#Text-文本" class="headerlink" title="Text 文本"></a>Text 文本</h3><p><strong>对齐方式</strong></p>
-<ul>
-<li><code>TextAlignLeading</code>：左对齐；</li>
-<li><code>TextAlignCenter</code>：中间对齐；</li>
-<li><code>TextAlignTrailing</code>：右对齐。</li>
-</ul>
-<p><strong>字体样式</strong></p>
-<p>通过设置<code>Text</code>对象的<code>TextStyle</code>字段值，<code>TextStyle</code>是一个结构体：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">type TextStyle struct &#123;</span><br><span class="line">  Bold      bool</span><br><span class="line">  Italic    bool</span><br><span class="line">  Monospace bool</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>Bold</code>：粗体；</li>
-<li><code>Italic</code>：斜体；</li>
-<li><code>Monospace</code>：系统等宽字体。</li>
-</ul>
-<p><strong>外部字体</strong></p>
-<p>通过设置环境变量<code>FYNE_FONT</code>为一个<code>.ttf</code>文件从而使用外部字体。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text := canvas.NewText(<span class="string">&quot;Hello Text&quot;</span>, color.Black)</span><br><span class="line"></span><br><span class="line">text.Alignment = fyne.TextAlignTrailing</span><br><span class="line">text.TextStyle = fyne.TextStyle&#123;Italic: <span class="literal">true</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Line线"><a href="#Line线" class="headerlink" title="Line线"></a>Line线</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">line := canvas.NewLine(color.Black)</span><br><span class="line"></span><br><span class="line">line.StrokeWidth = <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Circle圆"><a href="#Circle圆" class="headerlink" title="Circle圆"></a>Circle圆</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">circle := canvas.NewCircle(color.Black)</span><br><span class="line"></span><br><span class="line">circle.StrokeColor = color.Gray&#123;<span class="number">0x99</span>&#125;</span><br><span class="line">circle.StrokeWidth = <span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="ImageFromResource图像"><a href="#ImageFromResource图像" class="headerlink" title="ImageFromResource图像"></a>ImageFromResource图像</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image := canvas.NewImageFromResource(theme.FileIcon())</span><br><span class="line">image.FillMode = canvas.ImageFillOriginal</span><br></pre></td></tr></table></figure>
-
-<h3 id="RasterWithPixels栅格与像素"><a href="#RasterWithPixels栅格与像素" class="headerlink" title="RasterWithPixels栅格与像素"></a>RasterWithPixels栅格与像素</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">raster := canvas.NewRasterWithPixels(</span><br><span class="line">    <span class="function"><span class="keyword">func</span><span class="params">(_, _, w, h <span class="type">int</span>)</span></span> color.Color &#123;</span><br><span class="line">       <span class="keyword">return</span> color.RGBA&#123;<span class="type">uint8</span>(rand.Intn(<span class="number">255</span>)),</span><br><span class="line">          <span class="type">uint8</span>(rand.Intn(<span class="number">255</span>)),</span><br><span class="line">          <span class="type">uint8</span>(rand.Intn(<span class="number">255</span>)), <span class="number">0xff</span>&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Gradient渐变图"><a href="#Gradient渐变图" class="headerlink" title="Gradient渐变图"></a>Gradient渐变图</h3><p><strong>HorizontalGradient水平线性渐变</strong></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradient := canvas.NewHorizontalGradient(color.Black, color.Transparent)</span><br></pre></td></tr></table></figure>
-
-<p><strong>VerticalGradient垂直线性渐变</strong></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradient := canvas.NewRadialGradient(color.Black, color.Transparent)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Widget"><a href="#Widget" class="headerlink" title="Widget"></a>Widget</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>窗体控件是一个<code>Fyne</code>应用程序的主要组成部分。它们能适配当前的主题，并且处理与用户的交互。</p>
-<h3 id="Label标签"><a href="#Label标签" class="headerlink" title="Label标签"></a>Label标签</h3><p>标签（<code>Label</code>）用于显示字符串。</p>
-<p>它有点类似于<code>canvas.Text</code>，不同之处在于<code>Label</code>可以处理简单的格式化比如’\n’</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label := widget.NewLabel(<span class="string">&quot;Name&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Button按钮"><a href="#Button按钮" class="headerlink" title="Button按钮"></a>Button按钮</h3><p>按钮（<code>Button</code>）控件让用户点击，给用户反馈。</p>
-<p><code>Button</code>可以包含文本，图标或两者皆有。</p>
-<p>调用<code>widget.NewButton()</code>创建一个默认的文本按钮，传入文本和一个无参的回调函数。</p>
-<p>带图标的按钮需要调用<code>widget.NewButtonWithIcon()</code>，传入文本和回调参数，还需要一个<code>fyne.Resource</code>类型的图标资源：</p>
-<h3 id="Entry输入框"><a href="#Entry输入框" class="headerlink" title="Entry输入框"></a>Entry输入框</h3><p>输入框（<code>Entry</code>）控件用于给用户输入简单的文本内容。</p>
-<p>调用<code>widget.NewEntry()</code>即可创建一个输入框控件。</p>
-<p><strong>我们一般保存输入框控件的引用，以便访问其<code>Text</code>字段来获取内容。</strong></p>
-<ul>
-<li><p>注册<code>OnChanged</code>回调函数。每当内容有修改时，<code>OnChanged</code>就会被调用。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nameEntry.OnChanged = <span class="function"><span class="keyword">func</span><span class="params">(content <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;name:&quot;</span>, nameEntry.Text, <span class="string">&quot;entered&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><del>调用<code>SetReadOnly(true)</code>设置输入框的只读属性。</del></p>
-</li>
-<li><p><code>SetPlaceHolder()</code>用来设置占位字符串。</p>
-</li>
-<li><p>设置字段<code>Multiline</code>让输入框接受多行文本。</p>
-</li>
-<li><p>使用<code>NewPasswordEntry()</code>创建一个密码输入框，输入的文本不会以明文显示。</p>
-</li>
-</ul>
-<p>通常将Button与Entry结合使用</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input := widget.NewEntry()</span><br><span class="line">input.SetPlaceHolder(<span class="string">&quot;Enter text...&quot;</span>)</span><br><span class="line">content := container.NewVBox(input, widget.NewButton(<span class="string">&quot;Save&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Content was:&quot;</span>, input.Text)</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Choices-选择框"><a href="#Choices-选择框" class="headerlink" title="Choices 选择框"></a>Choices 选择框</h3><p><code>Check</code>是简单的选择框，每个选择是独立的，例如爱好可以是足球、篮球，也可以都是。创建方法<code>widget.NewCheck()</code>，传入选项字符串（足球，篮球）和回调函数。</p>
-<p>回调函数接受一个<code>bool</code>类型的参数，表示该选项是否选中。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">football := widget.NewCheck(<span class="string">&quot;football&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">bool</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;football:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">basketball := widget.NewCheck(<span class="string">&quot;basketball&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">bool</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;basketball:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">pingpong := widget.NewCheck(<span class="string">&quot;pingpong&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">bool</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;pingpong:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><code>RadioGroup</code>是单选框，每个组内只能选择一个，例如性别，只能是男或女（？）。创建方法<code>widget.NewRadioGroup()</code>，传入字符串切片和回调函数作为参数。回调函数接受一个字符串参数，表示选中的选项。也可以使用<code>Selected</code>字段读取选中的选项。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sexRadioGroup := widget.NewRadioGroup([]<span class="type">string</span>&#123;<span class="string">&quot;male&quot;</span>, <span class="string">&quot;female&quot;</span>, <span class="string">&quot;unknown&quot;</span>&#125;, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;sex:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">sexBox := container.NewHBox(widget.NewLabel(<span class="string">&quot;Sex&quot;</span>), sexRadioGroup)</span><br></pre></td></tr></table></figure>
-
-<p><code>Select</code>是下拉选择框，点击时显示一个下拉菜单，点击选择。选项非常多的时候，比较适合用<code>Select</code>。创建方法<code>widget.NewSelect()</code>，参数与<code>NewRadio()</code>完全相同。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">provinceSelect := widget.NewSelect([]<span class="type">string</span>&#123;<span class="string">&quot;anhui&quot;</span>, <span class="string">&quot;zhejiang&quot;</span>, <span class="string">&quot;shanghai&quot;</span>&#125;, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;province:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">provinceBox := container.NewHBox(widget.NewLabel(<span class="string">&quot;Province&quot;</span>), layout.NewSpacer(), provinceSelect)</span><br></pre></td></tr></table></figure>
-
-<h3 id="From表单"><a href="#From表单" class="headerlink" title="From表单"></a>From表单</h3><p>表单控件（<code>Form</code>）用于对很多<code>Label</code>和输入控件进行布局。</p>
-<p>如果指定了<code>OnSubmit</code>或<code>OnCancel</code>函数，表单控件会自动添加对应的<code>Button</code>按钮。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">form.OnSubmit = <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;name:&quot;</span>, nameEntry.Text, <span class="string">&quot;pass:&quot;</span>, passEntry.Text, <span class="string">&quot;login in&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line">form.OnCancel = <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;login canceled&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们调用<code>widget.NewForm()</code>传入一个<code>widget.FormItem</code>切片创建<code>Form</code>控件。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">form := widget.NewForm(</span><br><span class="line">	&amp;widget.FormItem&#123;Text: <span class="string">&quot;Name&quot;</span>, Widget: nameEntry&#125;,</span><br><span class="line">	&amp;widget.FormItem&#123;Text: <span class="string">&quot;Pass&quot;</span>, Widget: passEntry&#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>也可以通过<code>&amp;widget.Form&#123;&#125;</code>创建</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">form := &amp;widget.Form&#123;</span><br><span class="line">	Items: []*widget.FormItem&#123; <span class="comment">// we can specify items in the constructor</span></span><br><span class="line">		&#123;Text: <span class="string">&quot;Entry&quot;</span>, Widget: entry&#125;&#125;,</span><br><span class="line">	OnSubmit: <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123; <span class="comment">// optional, handle form submission</span></span><br><span class="line">		log.Println(<span class="string">&quot;Form submitted:&quot;</span>, entry.Text)</span><br><span class="line">		log.Println(<span class="string">&quot;multiline:&quot;</span>, textArea.Text)</span><br><span class="line">		myWindow.Close()</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>每一项中一个字符串作为<code>Label</code>的文本，一个控件对象。</p>
-<p><del>创建好<code>Form</code>对象之后还能调用其<code>Append(label, widget)</code>方法添加控件。</del>有bug导致<code>OnSubmit</code>或<code>OnCancel</code>函数不起作用，最好在New表单的时候就指定完所有的控件。</p>
-<h3 id="ProgressBar进度条控件"><a href="#ProgressBar进度条控件" class="headerlink" title="ProgressBar进度条控件"></a>ProgressBar进度条控件</h3><p>进度条控件（<code>ProgressBar</code>）用来表示任务的进度。</p>
-<p>创建方法<code>widget.NewProgressBar()</code>，默认最小值为<code>0.0</code>，最大值为<code>1.1</code>，可通过<code>Min/Max</code>字段设置。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bar := widget.NewProgressBar()</span><br><span class="line"></span><br><span class="line">bar.Min = <span class="number">0</span></span><br><span class="line">bar.Max = <span class="number">100</span></span><br></pre></td></tr></table></figure>
-
-<p>调用<code>SetValue()</code>方法来控制进度。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bar.SetValue(<span class="type">float64</span>(i))</span><br></pre></td></tr></table></figure>
-
-<p>还有一种进度条是循环动画，它表示有任务在进行中，并不能表示具体的完成情况。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bar := widget.NewProgressBarInfinite()</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="容器和布局"><a href="#容器和布局" class="headerlink" title="容器和布局"></a>容器和布局</h2><h3 id="Box盒子"><a href="#Box盒子" class="headerlink" title="Box盒子"></a>Box盒子</h3><p>盒子控件（<code>Box</code>）就是一个简单的水平或垂直的容器。</p>
-<p>在内部，<code>Box</code>对子控件采用盒状布局（<code>Box Layout</code>）。</p>
-<p><del>我们可以通过传入控件对象给<code>widget.NewHBox()</code>或<code>widget.NewVBox()</code>创建盒子。</del></p>
-<p><del>或者调用已经创建好的<code>widget.Box</code>对象的<code>Append()</code>或<code>Prepend()</code>向盒子中添加控件。前者在尾部追加，后者在头部添加。</del></p>
-<p>它有两种变体，水平和垂直。方框布局将所有元素排列在一行或一列中，并带有可选的空格以帮助对齐。</p>
-<p>用layout创建的水平框布局。NewHBoxLayout（）创建单行中项目的排列。框中的每个项目都将其宽度设置为其MinSize（）。所有项目的宽度和高度都将相等，这是所有MinSize（）.height值中的最大值。布局可以在容器中使用，也可以使用box小部件。NewHBox（）。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">content := container.New(</span><br><span class="line">    layout.NewHBoxLayout(),</span><br><span class="line">    ...</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">content := container.NewHBox()</span><br></pre></td></tr></table></figure>
-
-<p>垂直框布局类似，但它在列中排列项目。每个项目的高度将设置为最小值，所有宽度将相等，设置为最小宽度中的最大值。</p>
-<p>要在元素之间创建扩展空间（例如，使一些元素左对齐，另一些元素右对齐），请添加layout.NewSpacer（）作为其中一项。间隔件将展开以填充所有可用空间。在垂直框布局的开头添加间隔符将导致所有项目底部对齐。您可以在水平排列的起点和终点添加一个，以创建中心对齐。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">centered := container.New(layout.NewHBoxLayout(), layout.NewSpacer(), text4, layout.NewSpacer())</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="TabContainer标签容器"><a href="#TabContainer标签容器" class="headerlink" title="TabContainer标签容器"></a>TabContainer标签容器</h3><p>标签容器（<code>TabContainer</code>）允许用户在不同的内容面板之间切换。</p>
-<p>标签可以是文本或图标。</p>
-<p>使用<code>container.NewAppTabs</code>（…）和传递<code>container.TabItem</code>项（可以使用<code>container.NewTabItem（…）</code>创建）创建选项卡容器。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tabs := container.NewAppTabs(</span><br><span class="line">    container.NewTabItem(<span class="string">&quot;Profile&quot;</span>, profile),</span><br><span class="line">    container.NewTabItem(<span class="string">&quot;Setting&quot;</span>, setting),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>可以通过设置选项卡的位置来配置选项卡容器，默认位置为top。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tabs.SetTabLocation(container.TabLocationBottom)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>container.TabLocationTop</code></li>
-<li><code>container.TabLocationBottom</code></li>
-<li><code>container.TabLocationLeading</code></li>
-<li><code>container.TabLocationTrailing</code></li>
-</ul>
-<h2 id="theme"><a href="#theme" class="headerlink" title="theme"></a>theme</h2><p>家园图标</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme.HomeIcon()</span><br></pre></td></tr></table></figure>
-
-<h2 id="活动流程"><a href="#活动流程" class="headerlink" title="活动流程"></a>活动流程</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a := app.New()</span><br><span class="line">w := a.NewWindow(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//type1</span></span><br><span class="line">w.ShowAndRun()</span><br><span class="line"></span><br><span class="line"><span class="comment">//type2</span></span><br><span class="line">w.Show()</span><br><span class="line">a.Run()</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/01/16/fyne/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

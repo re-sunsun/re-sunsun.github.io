@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Death Stranding 岛の史诗</title>
+    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
+    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
+<blockquote>
+<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+</blockquote>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>墙里的第九艺术</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>.DS_Store泄漏</title>
     <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
     <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
@@ -65,6 +80,11 @@
       </tags>
   </entry>
   <entry>
+    <title>graduate</title>
+    <url>/2023/06/07/graduate/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>fyne</title>
     <url>/2024/01/16/fyne/</url>
     <content><![CDATA[<h1 id="fyne"><a href="#fyne" class="headerlink" title="fyne"></a>fyne</h1><h2 id="fyne包结构划分"><a href="#fyne包结构划分" class="headerlink" title="fyne包结构划分"></a>fyne包结构划分</h2><p><code>fyne</code>将功能划分到多个子包中：</p>
@@ -76,6 +96,8 @@
 <li><code>fyne.io/fyne/layout</code>：提供多种界面布局；</li>
 <li><code>fyne.io/fyne/widget</code>：提供多种组件，<code>fyne</code>所有的窗体控件和交互元素都在这个子包中。</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h2><h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><p>在<code>fyne</code>应用程序中，所有显示元素都是绘制在画布（<code>Canvas</code>）上的。这些元素都是画布对象（<code>CanvasObject</code>）。调用<code>Canvas.SetContent()</code>方法可设置画布内容。<code>Canvas</code>一般和布局（<code>Layout</code>）容器（<code>Container</code>）一起使用。<code>canvas</code>子包中提供了一些基础的画布对象：</p>
 <h3 id="元素挂载到画布上"><a href="#元素挂载到画布上" class="headerlink" title="元素挂载到画布上"></a>元素挂载到画布上</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">c := container.New(layout.NewGridLayout(<span class="number">1</span>), rect, text, line, circle, image, raster, gradient)</span><br><span class="line">w.SetContent(c)</span><br></pre></td></tr></table></figure>
 
@@ -255,23 +277,12 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>graduate</title>
-    <url>/2023/06/07/graduate/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
-</blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
+    <title>叠加原理</title>
+    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
+<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
       <tags>
-        <tag>游戏</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -287,6 +298,13 @@
       <tags>
         <tag>区块链</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>规范</title>
+    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>计算机是如何启动的?</title>
@@ -368,22 +386,6 @@
 <p>如Linux，内核载入成功后，运行&#x2F;sbin&#x2F;init，其根据配置文件产生init进程，pid为1。然后init线程加载系统的各个模块，直至执行&#x2F;bin&#x2F;login，跳出登陆界面，由用户输入账号密码。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？ - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 <p><a href="https://blog.csdn.net/weixin_43590389/article/details/104094234"></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>叠加原理</title>
-    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
-<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
-      <tags>
-        <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>规范</title>
-    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
 </search>
