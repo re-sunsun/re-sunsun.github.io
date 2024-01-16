@@ -21,65 +21,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
-</blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>R</title>
-    <url>/2022/04/04/R/</url>
-    <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
-<blockquote>
-<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
-<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>基本的三种数据类型</strong></p>
-<ul>
-<li><p>数字</p>
-<p>分为一般型（123）与科学计数法（1.23e2）</p>
-</li>
-<li><p>逻辑</p>
-<p><strong>TRUE</strong> 和 <strong>FALSE</strong>，R语言区分大小写</p>
-</li>
-<li><p>文本</p>
-<p>与字符串差不多，可以用单引号定义</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;r&#x27;</span><span class="operator">==</span><span class="string">&quot;r&quot;</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="literal">TRUE</span></span><br></pre></td></tr></table></figure>
-
-<p>有一说一，这种‘放纵’的风格我不太喜欢</p>
-</li>
-</ul>
-<p><strong>按对象类型分-六种</strong></p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2020/07/52988954-D570-42FD-9CFC-90CD78D361C3.jpg" alt="借用一下菜鸟的图"></p>
-<h2 id="向量-vector"><a href="#向量-vector" class="headerlink" title="向量-vector"></a>向量-vector</h2><p>向量从数据结构上看就是一个线性表，可以看成一个数组。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span></span><br><span class="line">b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">a<span class="operator">+</span>b</span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">8</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<p><code>c()</code>函数的作用是创建一个向量，可以看到向量可以直接相加，有len的限制，不一致会Panic。</p>
-<h3 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h3><p><strong>下标</strong></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">,</span><span class="number">20</span><span class="punctuation">,</span><span class="number">30</span>，<span class="number">40</span>，<span class="number">50</span><span class="punctuation">)</span></span><br><span class="line">a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<p>R中的下标不是偏移量而是第几个</p>
-<p><strong>取一部分</strong></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">取一段</span><br><span class="line">a<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">20</span> <span class="number">30</span> <span class="number">40</span></span><br><span class="line">取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">30</span> <span class="number">50</span></span><br><span class="line">不取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span> <span class="number">40</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>标量运算</strong></p>
-]]></content>
-      <tags>
-        <tag>R语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>fyne</title>
     <url>/2024/01/16/fyne/</url>
     <content><![CDATA[<h1 id="fyne"><a href="#fyne" class="headerlink" title="fyne"></a>fyne</h1><h2 id="fyne包结构划分"><a href="#fyne包结构划分" class="headerlink" title="fyne包结构划分"></a>fyne包结构划分</h2><p><code>fyne</code>将功能划分到多个子包中：</p>
@@ -236,14 +177,73 @@
       </tags>
   </entry>
   <entry>
-    <title>todolist-2023</title>
-    <url>/2023/01/01/todolist-2023/</url>
-    <content><![CDATA[]]></content>
+    <title>R</title>
+    <url>/2022/04/04/R/</url>
+    <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
+<blockquote>
+<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
+<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>基本的三种数据类型</strong></p>
+<ul>
+<li><p>数字</p>
+<p>分为一般型（123）与科学计数法（1.23e2）</p>
+</li>
+<li><p>逻辑</p>
+<p><strong>TRUE</strong> 和 <strong>FALSE</strong>，R语言区分大小写</p>
+</li>
+<li><p>文本</p>
+<p>与字符串差不多，可以用单引号定义</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;r&#x27;</span><span class="operator">==</span><span class="string">&quot;r&quot;</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="literal">TRUE</span></span><br></pre></td></tr></table></figure>
+
+<p>有一说一，这种‘放纵’的风格我不太喜欢</p>
+</li>
+</ul>
+<p><strong>按对象类型分-六种</strong></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/07/52988954-D570-42FD-9CFC-90CD78D361C3.jpg" alt="借用一下菜鸟的图"></p>
+<h2 id="向量-vector"><a href="#向量-vector" class="headerlink" title="向量-vector"></a>向量-vector</h2><p>向量从数据结构上看就是一个线性表，可以看成一个数组。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span></span><br><span class="line">b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">a<span class="operator">+</span>b</span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">8</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p><code>c()</code>函数的作用是创建一个向量，可以看到向量可以直接相加，有len的限制，不一致会Panic。</p>
+<h3 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h3><p><strong>下标</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">,</span><span class="number">20</span><span class="punctuation">,</span><span class="number">30</span>，<span class="number">40</span>，<span class="number">50</span><span class="punctuation">)</span></span><br><span class="line">a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>R中的下标不是偏移量而是第几个</p>
+<p><strong>取一部分</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">取一段</span><br><span class="line">a<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">20</span> <span class="number">30</span> <span class="number">40</span></span><br><span class="line">取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">30</span> <span class="number">50</span></span><br><span class="line">不取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span> <span class="number">40</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>标量运算</strong></p>
+]]></content>
+      <tags>
+        <tag>R语言</tag>
+      </tags>
   </entry>
   <entry>
     <title>graduate</title>
     <url>/2023/06/07/graduate/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>todolist-2023</title>
+    <url>/2023/01/01/todolist-2023/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Death Stranding 岛の史诗</title>
+    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
+    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
+<blockquote>
+<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
+</blockquote>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>墙里的第九艺术</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
   </entry>
   <entry>
     <title>全局唯一标识分区表GPT</title>
@@ -288,6 +288,15 @@
 ]]></content>
       <tags>
         <tag>区块链</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>叠加原理</title>
+    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
+<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
+      <tags>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -378,14 +387,5 @@
     <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>叠加原理</title>
-    <url>/2022/03/28/%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h1 id="叠加原理"><a href="#叠加原理" class="headerlink" title="叠加原理"></a>叠加原理</h1><p>叠加原理在多个工科方向都有定义</p>
-<h2 id="数学中的叠加原理"><a href="#数学中的叠加原理" class="headerlink" title="数学中的叠加原理"></a>数学中的叠加原理</h2>]]></content>
-      <tags>
-        <tag>数学</tag>
-      </tags>
   </entry>
 </search>
