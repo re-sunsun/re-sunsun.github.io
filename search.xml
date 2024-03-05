@@ -21,21 +21,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Death Stranding 岛の史诗</title>
-    <url>/2022/03/24/Death-Stranding-%E5%B2%9B%E3%81%AE%E5%8F%B2%E8%AF%97/</url>
-    <content><![CDATA[<p><img src="https://images.ali213.net/picfile/pic/2022/03/23/927_2022032393931925.jpg"></p>
-<blockquote>
-<p>Once,there was an explosion…A bang which gave birth to time and spaceOnce, there was an explosion…A bang which set a planet spinning in that space .Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。</p>
-</blockquote>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>墙里的第九艺术</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>R</title>
     <url>/2022/04/04/R/</url>
     <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
@@ -83,13 +68,6 @@
     <title>todolist-2023</title>
     <url>/2023/01/01/todolist-2023/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>代码规范</title>
-    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>全局唯一标识分区表GPT</title>
@@ -361,6 +339,13 @@
 <p>如Linux，内核载入成功后，运行&#x2F;sbin&#x2F;init，其根据配置文件产生init进程，pid为1。然后init线程加载系统的各个模块，直至执行&#x2F;bin&#x2F;login，跳出登陆界面，由用户输入账号密码。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？ - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 <p><a href="https://blog.csdn.net/weixin_43590389/article/details/104094234"></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>代码规范</title>
+    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 ]]></content>
   </entry>
 </search>
