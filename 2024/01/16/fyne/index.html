@@ -28,7 +28,7 @@
 <meta property="og:description" content="fynefyne包结构划分fyne将功能划分到多个子包中：  fyne.io&#x2F;fyne：提供所有fyne应用程序代码共用的基础定义，包括数据类型和接口； fyne.io&#x2F;fyne&#x2F;app：提供创建应用程序的 API； fyne.io&#x2F;fyne&#x2F;canvas：提供Fyne使用的绘制 API； fyne.io&#x2F;fyne&#x2F;dialog：提供对话框组件； fyne.io&#x2F;fyne&#x2F;layout：提供多种界">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-16T02:18:31.000Z">
-<meta property="article:modified_time" content="2024-01-16T02:30:50.728Z">
+<meta property="article:modified_time" content="2024-01-19T09:33:32.154Z">
 <meta property="article:author" content="sunsun">
 <meta property="article:tag" content="fyne">
 <meta name="twitter:card" content="summary">
@@ -216,10 +216,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-01-16 10:18:31 / 修改时间：10:30:50" itemprop="dateCreated datePublished" datetime="2024-01-16T10:18:31+08:00">2024-01-16</time>
+              <time title="创建时间：2024-01-16 10:18:31" itemprop="dateCreated datePublished" datetime="2024-01-16T10:18:31+08:00">2024-01-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-19 17:33:32" itemprop="dateModified" datetime="2024-01-19T17:33:32+08:00">2024-01-19</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -324,8 +330,11 @@
 <p>回调函数接受一个<code>bool</code>类型的参数，表示该选项是否选中。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">football := widget.NewCheck(<span class="string">&quot;football&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">bool</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;football:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">basketball := widget.NewCheck(<span class="string">&quot;basketball&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">bool</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;basketball:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">pingpong := widget.NewCheck(<span class="string">&quot;pingpong&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">bool</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;pingpong:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<p><code>CheckGroup</code>支持由字符串切片快速生成多个选择框，回调函数接受一个<code>[]string</code>类型的参数，为当前所有勾选的<code>Group</code>内的选项</p>
 <p><code>RadioGroup</code>是单选框，每个组内只能选择一个，例如性别，只能是男或女（？）。创建方法<code>widget.NewRadioGroup()</code>，传入字符串切片和回调函数作为参数。回调函数接受一个字符串参数，表示选中的选项。也可以使用<code>Selected</code>字段读取选中的选项。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sexRadioGroup := widget.NewRadioGroup([]<span class="type">string</span>&#123;<span class="string">&quot;male&quot;</span>, <span class="string">&quot;female&quot;</span>, <span class="string">&quot;unknown&quot;</span>&#125;, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;sex:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">sexBox := container.NewHBox(widget.NewLabel(<span class="string">&quot;Sex&quot;</span>), sexRadioGroup)</span><br></pre></td></tr></table></figure>
+
+
 
 <p><code>Select</code>是下拉选择框，点击时显示一个下拉菜单，点击选择。选项非常多的时候，比较适合用<code>Select</code>。创建方法<code>widget.NewSelect()</code>，参数与<code>NewRadio()</code>完全相同。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">provinceSelect := widget.NewSelect([]<span class="type">string</span>&#123;<span class="string">&quot;anhui&quot;</span>, <span class="string">&quot;zhejiang&quot;</span>, <span class="string">&quot;shanghai&quot;</span>&#125;, <span class="function"><span class="keyword">func</span><span class="params">(value <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;province:&quot;</span>, value)</span><br><span class="line">&#125;)</span><br><span class="line">provinceBox := container.NewHBox(widget.NewLabel(<span class="string">&quot;Province&quot;</span>), layout.NewSpacer(), provinceSelect)</span><br></pre></td></tr></table></figure>
@@ -405,8 +414,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/06/07/graduate/" rel="prev" title="graduate">
-      <i class="fa fa-chevron-left"></i> graduate
+    <a href="/2023/01/01/todolist-2023/" rel="prev" title="todolist-2023">
+      <i class="fa fa-chevron-left"></i> todolist-2023
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -483,7 +492,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -496,7 +505,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
