@@ -65,42 +65,6 @@
       </tags>
   </entry>
   <entry>
-    <title>todolist-2023</title>
-    <url>/2023/01/01/todolist-2023/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>全局唯一标识分区表GPT</title>
-    <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
-    <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
-<p>小明一直以来都致力于支持一线老师们的演艺事业，多年来存下来超多的演艺资源。</p>
-<p>这也导致老师们纷纷抱怨道，现在的房子太小，太拥挤。于是小明购入了一块4T的硬盘，可是装上硬盘以后坏了。原本4T的硬盘现在只有2T的使用率，完蛋，这个问题不解决的话老师们住哪里?</p>
-</blockquote>
-<span id="more"></span>
-
-<p>MBR系统中通过四个字节来表明分区的扇区总数，经过计算可以得知，以512字节的扇区为基准。MBR系统所支持的最大磁盘容量是2T。</p>
-<p>如何突破这一上线？</p>
-<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区数 ✖️ 扇区大小</p>
-<p>想要提高最大容量就可以从这两方面入手。</p>
-<h2 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h2><p>根据几个古早的规定协议，扇区的大小被约定为512字节</p>
-<blockquote>
-<p>1956年由industry trade organization, International Disk Drive Equipment和Materials Association三家机构确定的行业标准</p>
-<p>有时代和技术的限制，因为磁盘技术发展初期，存储容量非常小。512字节的扇区也够用，但是随着时代的发展，512字节大小的扇区（Sector）明显太小了，由于每个扇区（Sector）还要存放很多其他信息，因此增大sector size可以降低扇区（Sector）的数量，从而提高实际存储量，同时降低了差错校验等很多CPU计算量。但遗憾的是<strong>由于这个标准太根深蒂固，要想改变一些底层代码或架构势必非常困难，所以现在4KB扇区硬盘暂时还没有全部普及</strong>。</p>
-</blockquote>
-<p>现在市面上2T以上的硬盘基本上都是以4KB做为扇区大小。</p>
-<p>你也可以通过简单的指令查看自己的硬盘的情况，以macos举例</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br><span class="line">diskutil info &#123;location of your disk&#125;</span><br><span class="line"></span><br><span class="line">Device Block Size:         512 Bytes</span><br></pre></td></tr></table></figure>
-
-<h2 id="扇区数"><a href="#扇区数" class="headerlink" title="扇区数"></a>扇区数</h2><p>MBR系统有四个字节用于表明扇区数量，也就是2^32。毫无疑问要突破这种限制我们需要一个新的系统</p>
-<blockquote>
-<p>全局唯一标识分区表（GUID Partition Table，缩写：GPT）是指全局唯一标示磁盘分区表格式。它是可扩展固件接口（EFI）标准（被Intel用于替代个人计算机的BIOS）的一部分，<strong>被用于替代BIOS系统中的以32bits来存储逻辑块地址和大小信息的主引导记录（MBR）分区表</strong>。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>磁盘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>fyne</title>
     <url>/2024/01/16/fyne/</url>
     <content><![CDATA[<h1 id="fyne"><a href="#fyne" class="headerlink" title="fyne"></a>fyne</h1><h2 id="fyne包结构划分"><a href="#fyne包结构划分" class="headerlink" title="fyne包结构划分"></a>fyne包结构划分</h2><p><code>fyne</code>将功能划分到多个子包中：</p>
@@ -260,6 +224,67 @@
       </tags>
   </entry>
   <entry>
+    <title>todolist-2023</title>
+    <url>/2023/01/01/todolist-2023/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>全局唯一标识分区表GPT</title>
+    <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
+    <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
+<p>小明一直以来都致力于支持一线老师们的演艺事业，多年来存下来超多的演艺资源。</p>
+<p>这也导致老师们纷纷抱怨道，现在的房子太小，太拥挤。于是小明购入了一块4T的硬盘，可是装上硬盘以后坏了。原本4T的硬盘现在只有2T的使用率，完蛋，这个问题不解决的话老师们住哪里?</p>
+</blockquote>
+<span id="more"></span>
+
+<p>MBR系统中通过四个字节来表明分区的扇区总数，经过计算可以得知，以512字节的扇区为基准。MBR系统所支持的最大磁盘容量是2T。</p>
+<p>如何突破这一上线？</p>
+<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区数 ✖️ 扇区大小</p>
+<p>想要提高最大容量就可以从这两方面入手。</p>
+<h2 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h2><p>根据几个古早的规定协议，扇区的大小被约定为512字节</p>
+<blockquote>
+<p>1956年由industry trade organization, International Disk Drive Equipment和Materials Association三家机构确定的行业标准</p>
+<p>有时代和技术的限制，因为磁盘技术发展初期，存储容量非常小。512字节的扇区也够用，但是随着时代的发展，512字节大小的扇区（Sector）明显太小了，由于每个扇区（Sector）还要存放很多其他信息，因此增大sector size可以降低扇区（Sector）的数量，从而提高实际存储量，同时降低了差错校验等很多CPU计算量。但遗憾的是<strong>由于这个标准太根深蒂固，要想改变一些底层代码或架构势必非常困难，所以现在4KB扇区硬盘暂时还没有全部普及</strong>。</p>
+</blockquote>
+<p>现在市面上2T以上的硬盘基本上都是以4KB做为扇区大小。</p>
+<p>你也可以通过简单的指令查看自己的硬盘的情况，以macos举例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br><span class="line">diskutil info &#123;location of your disk&#125;</span><br><span class="line"></span><br><span class="line">Device Block Size:         512 Bytes</span><br></pre></td></tr></table></figure>
+
+<h2 id="扇区数"><a href="#扇区数" class="headerlink" title="扇区数"></a>扇区数</h2><p>MBR系统有四个字节用于表明扇区数量，也就是2^32。毫无疑问要突破这种限制我们需要一个新的系统</p>
+<blockquote>
+<p>全局唯一标识分区表（GUID Partition Table，缩写：GPT）是指全局唯一标示磁盘分区表格式。它是可扩展固件接口（EFI）标准（被Intel用于替代个人计算机的BIOS）的一部分，<strong>被用于替代BIOS系统中的以32bits来存储逻辑块地址和大小信息的主引导记录（MBR）分区表</strong>。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>磁盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>方大镜扎古加眼灯</title>
+    <url>/2024/03/18/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF/</url>
+    <content><![CDATA[<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF01.jpg" alt="img"></p>
+<span id="more"></span>
+
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF02.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF03.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF04.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF05.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF06.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF07.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF08.jpg" alt="img"></p>
+]]></content>
+      <tags>
+        <tag>心想胶成</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码规范</title>
+    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>计算机是如何启动的?</title>
     <url>/2022/04/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E7%9A%84/</url>
     <content><![CDATA[<blockquote>
@@ -339,13 +364,6 @@
 <p>如Linux，内核载入成功后，运行&#x2F;sbin&#x2F;init，其根据配置文件产生init进程，pid为1。然后init线程加载系统的各个模块，直至执行&#x2F;bin&#x2F;login，跳出登陆界面，由用户输入账号密码。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？ - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 <p><a href="https://blog.csdn.net/weixin_43590389/article/details/104094234"></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>代码规范</title>
-    <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
 </search>
