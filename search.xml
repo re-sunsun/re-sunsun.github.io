@@ -1,68 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>.DS_Store泄漏</title>
-    <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
-    <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
-<span id="more"></span>
-
-<h1 id="DS-Store文件是什么"><a href="#DS-Store文件是什么" class="headerlink" title=".DS_Store文件是什么"></a>.DS_Store文件是什么</h1><p>DS_Store 全称 Desktop Service Store,即桌面服务存储，是一种由macOS系统创建的隐藏文件，用于保存文件夹自定义的属性如图标位置或背景色等，类比于win下的desktop.ini。</p>
-<p>DS文件存储了文件相关的信息，这使得它有可能因此造成文件目录结构泄漏或是源代码或其他敏感信息的泄漏，这些泄漏可以被当作攻击手段,如<a href="https://blog.csdn.net/qq_45521281/article/details/105774453">基于DS_Store的安全问题</a></p>
-<h1 id="如何防治"><a href="#如何防治" class="headerlink" title="如何防治"></a>如何防治</h1><p>目前来看，ds文件主要会因为两个途径泄漏</p>
-<ul>
-<li><p>与别人互换文件时</p>
-<p>可以通过禁止全局的ds文件生成来源头性的避免ds文件的泄漏</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用git等工具进行开发时</p>
-<p>采用全局性的.gitignore</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo .DS_Store &gt;&gt; ~/.gitignore_global</span><br><span class="line">git config --global core.excludesfile ~/.gitignore_global</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>R</title>
-    <url>/2022/04/04/R/</url>
-    <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
-<blockquote>
-<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
-<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>基本的三种数据类型</strong></p>
-<ul>
-<li><p>数字</p>
-<p>分为一般型（123）与科学计数法（1.23e2）</p>
-</li>
-<li><p>逻辑</p>
-<p><strong>TRUE</strong> 和 <strong>FALSE</strong>，R语言区分大小写</p>
-</li>
-<li><p>文本</p>
-<p>与字符串差不多，可以用单引号定义</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;r&#x27;</span><span class="operator">==</span><span class="string">&quot;r&quot;</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="literal">TRUE</span></span><br></pre></td></tr></table></figure>
-
-<p>有一说一，这种‘放纵’的风格我不太喜欢</p>
-</li>
-</ul>
-<p><strong>按对象类型分-六种</strong></p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2020/07/52988954-D570-42FD-9CFC-90CD78D361C3.jpg" alt="借用一下菜鸟的图"></p>
-<h2 id="向量-vector"><a href="#向量-vector" class="headerlink" title="向量-vector"></a>向量-vector</h2><p>向量从数据结构上看就是一个线性表，可以看成一个数组。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span></span><br><span class="line">b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">a<span class="operator">+</span>b</span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">8</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<p><code>c()</code>函数的作用是创建一个向量，可以看到向量可以直接相加，有len的限制，不一致会Panic。</p>
-<h3 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h3><p><strong>下标</strong></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">,</span><span class="number">20</span><span class="punctuation">,</span><span class="number">30</span>，<span class="number">40</span>，<span class="number">50</span><span class="punctuation">)</span></span><br><span class="line">a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<p>R中的下标不是偏移量而是第几个</p>
-<p><strong>取一部分</strong></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">取一段</span><br><span class="line">a<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">20</span> <span class="number">30</span> <span class="number">40</span></span><br><span class="line">取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">30</span> <span class="number">50</span></span><br><span class="line">不取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span> <span class="number">40</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>标量运算</strong></p>
-]]></content>
-      <tags>
-        <tag>R语言</tag>
-      </tags>
+    <title>todolist-2023</title>
+    <url>/2023/01/01/todolist-2023/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>fyne</title>
@@ -220,13 +161,90 @@
 
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>]]></content>
       <tags>
-        <tag>fyne</tag>
+        <tag>golang package</tag>
       </tags>
   </entry>
   <entry>
-    <title>todolist-2023</title>
-    <url>/2023/01/01/todolist-2023/</url>
-    <content><![CDATA[]]></content>
+    <title>.DS_Store泄漏</title>
+    <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
+    <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
+<span id="more"></span>
+
+<h1 id="DS-Store文件是什么"><a href="#DS-Store文件是什么" class="headerlink" title=".DS_Store文件是什么"></a>.DS_Store文件是什么</h1><p>DS_Store 全称 Desktop Service Store,即桌面服务存储，是一种由macOS系统创建的隐藏文件，用于保存文件夹自定义的属性如图标位置或背景色等，类比于win下的desktop.ini。</p>
+<p>DS文件存储了文件相关的信息，这使得它有可能因此造成文件目录结构泄漏或是源代码或其他敏感信息的泄漏，这些泄漏可以被当作攻击手段,如<a href="https://blog.csdn.net/qq_45521281/article/details/105774453">基于DS_Store的安全问题</a></p>
+<h1 id="如何防治"><a href="#如何防治" class="headerlink" title="如何防治"></a>如何防治</h1><p>目前来看，ds文件主要会因为两个途径泄漏</p>
+<ul>
+<li><p>与别人互换文件时</p>
+<p>可以通过禁止全局的ds文件生成来源头性的避免ds文件的泄漏</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用git等工具进行开发时</p>
+<p>采用全局性的.gitignore</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo .DS_Store &gt;&gt; ~/.gitignore_global</span><br><span class="line">git config --global core.excludesfile ~/.gitignore_global</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>R</title>
+    <url>/2022/04/04/R/</url>
+    <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
+<blockquote>
+<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
+<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>基本的三种数据类型</strong></p>
+<ul>
+<li><p>数字</p>
+<p>分为一般型（123）与科学计数法（1.23e2）</p>
+</li>
+<li><p>逻辑</p>
+<p><strong>TRUE</strong> 和 <strong>FALSE</strong>，R语言区分大小写</p>
+</li>
+<li><p>文本</p>
+<p>与字符串差不多，可以用单引号定义</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;r&#x27;</span><span class="operator">==</span><span class="string">&quot;r&quot;</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="literal">TRUE</span></span><br></pre></td></tr></table></figure>
+
+<p>有一说一，这种‘放纵’的风格我不太喜欢</p>
+</li>
+</ul>
+<p><strong>按对象类型分-六种</strong></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/07/52988954-D570-42FD-9CFC-90CD78D361C3.jpg" alt="借用一下菜鸟的图"></p>
+<h2 id="向量-vector"><a href="#向量-vector" class="headerlink" title="向量-vector"></a>向量-vector</h2><p>向量从数据结构上看就是一个线性表，可以看成一个数组。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span></span><br><span class="line">b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">a<span class="operator">+</span>b</span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">8</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p><code>c()</code>函数的作用是创建一个向量，可以看到向量可以直接相加，有len的限制，不一致会Panic。</p>
+<h3 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h3><p><strong>下标</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">,</span><span class="number">20</span><span class="punctuation">,</span><span class="number">30</span>，<span class="number">40</span>，<span class="number">50</span><span class="punctuation">)</span></span><br><span class="line">a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>R中的下标不是偏移量而是第几个</p>
+<p><strong>取一部分</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">取一段</span><br><span class="line">a<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">20</span> <span class="number">30</span> <span class="number">40</span></span><br><span class="line">取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">30</span> <span class="number">50</span></span><br><span class="line">不取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span> <span class="number">40</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>标量运算</strong></p>
+]]></content>
+      <tags>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>方大镜扎古加眼灯</title>
+    <url>/2024/03/18/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF/</url>
+    <content><![CDATA[<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF01.jpg" alt="img"></p>
+<span id="more"></span>
+
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF02.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF03.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF04.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF05.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF06.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF07.jpg" alt="img"></p>
+<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF08.jpg" alt="img"></p>
+]]></content>
+      <tags>
+        <tag>心想胶成</tag>
+      </tags>
   </entry>
   <entry>
     <title>全局唯一标识分区表GPT</title>
@@ -260,29 +278,42 @@
       </tags>
   </entry>
   <entry>
-    <title>方大镜扎古加眼灯</title>
-    <url>/2024/03/18/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF/</url>
-    <content><![CDATA[<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF01.jpg" alt="img"></p>
-<span id="more"></span>
-
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF02.jpg" alt="img"></p>
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF03.jpg" alt="img"></p>
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF04.jpg" alt="img"></p>
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF05.jpg" alt="img"></p>
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF06.jpg" alt="img"></p>
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF07.jpg" alt="img"></p>
-<p><img src="/pic/%E6%96%B9%E5%A4%A7%E9%95%9C%E6%89%8E%E5%8F%A4%E5%8A%A0%E7%9C%BC%E7%81%AF08.jpg" alt="img"></p>
-]]></content>
-      <tags>
-        <tag>心想胶成</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>代码规范</title>
     <url>/2022/05/31/%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>每日一题.1793. 好子数组的最大分数</title>
+    <url>/2024/03/19/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-1793-%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%86%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给你一个整数数组 <code>nums</code> <strong>（下标从 0 开始）</strong>和一个整数 <code>k</code> 。</p>
+<p>一个子数组 <code>(i, j)</code> 的 <strong>分数</strong> 定义为 <code>min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1)</code> 。一个 <strong>好</strong> 子数组的两个端点下标需要满足 <code>i &lt;= k &lt;= j</code> 。</p>
+<p>请你返回 <strong>好</strong> 子数组的最大可能 <strong>分数</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,4,3,7,4,5], k = 3</span><br><span class="line">输出：15</span><br><span class="line">解释：最优子数组的左右端点下标是 (1, 5) ，分数为 min(4,3,7,4,5) * (5-1+1) = 3 * 5 = 15 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [5,5,4,5,4,1,1,1], k = 0</span><br><span class="line">输出：20</span><br><span class="line">解释：最优子数组的左右端点下标是 (0, 4) ，分数为 min(5,5,4,5,4) * (4-0+1) = 4 * 5 = 20 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 2 * 104</code></li>
+<li><code>0 &lt;= k &lt; nums.length</code></li>
+</ul>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><code>min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1)</code> 定义式包含两部分一部分是i到j区间上的最小值，另一部分是区间长度。题设要求找到该定义式的最大值，在初始条件下，<code>i=k=j</code>，此时式子的值为<code>num[k]</code> 当i或j向左右移动时，区间最小值将会变化而区间的长度也将会变化。</p>
+<p>已知区间最小值是不断变小的，区间长度是不断变大的，那么在一个区间最小值确定的情况下不断的拓宽区间的长度直到区间的左值或右值比当前区间最小值小（即再拓宽会改变区间最小值）此时取得当前最小值下能取得的最大表达式值。</p>
+<p>而后继续移动i或者j，在刚才假设的情况下，此时区间最小值将会变化，重复刚才的步骤，将几个区间最小值的最大表达式值进行比较，最终取得整个数组维度上的表达式的最大值。</p>
+<p>简单来讲就是，决定木桶能装多少水的不是最长的木板而是最短的那一块。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>不想写代码，贴一个。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maximumScore</span><span class="params">(nums []<span class="type">int</span>, k <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    n := <span class="built_in">len</span>(nums)</span><br><span class="line">    left, right := k - <span class="number">1</span>, k + <span class="number">1</span></span><br><span class="line">    ans := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := nums[k]; ; i-- &#123;</span><br><span class="line">        <span class="keyword">for</span> left &gt;= <span class="number">0</span> &amp;&amp; nums[left] &gt;= i &#123;</span><br><span class="line">            left--</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> right &lt; n &amp;&amp; nums[right] &gt;= i &#123;</span><br><span class="line">            right++</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, (right - left - <span class="number">1</span>) * i)</span><br><span class="line">        <span class="keyword">if</span> left == <span class="number">-1</span> &amp;&amp; right == n &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>每日一题</tag>
+        <tag>困难</tag>
+      </tags>
   </entry>
   <entry>
     <title>计算机是如何启动的?</title>
