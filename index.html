@@ -190,6 +190,146 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/21/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2671-%E9%A2%91%E7%8E%87%E8%B7%9F%E8%B8%AA%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
+      <meta itemprop="name" content="sunsun">
+      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sunsun'blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/03/21/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2671-%E9%A2%91%E7%8E%87%E8%B7%9F%E8%B8%AA%E5%99%A8/" class="post-title-link" itemprop="url">每日一题.2671.频率跟踪器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-03-21 09:24:52 / 修改时间：09:42:33" itemprop="dateCreated datePublished" datetime="2024-03-21T09:24:52+08:00">2024-03-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>请你设计并实现一个能够对其中的值进行跟踪的数据结构，并支持对频率相关查询进行应答。</p>
+<p>实现 <code>FrequencyTracker</code> 类：</p>
+<ul>
+<li><code>FrequencyTracker()</code>：使用一个空数组初始化 <code>FrequencyTracker</code> 对象。</li>
+<li><code>void add(int number)</code>：添加一个 <code>number</code> 到数据结构中。</li>
+<li><code>void deleteOne(int number)</code>：从数据结构中删除一个 <code>number</code> 。数据结构 <strong>可能不包含</strong> <code>number</code> ，在这种情况下不删除任何内容。</li>
+<li><code>bool hasFrequency(int frequency)</code>: 如果数据结构中存在出现 <code>frequency</code> 次的数字，则返回 <code>true</code>，否则返回 <code>false</code>。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入</span><br><span class="line">[&quot;FrequencyTracker&quot;, &quot;add&quot;, &quot;add&quot;, &quot;hasFrequency&quot;]</span><br><span class="line">[[], [3], [3], [2]]</span><br><span class="line">输出</span><br><span class="line">[null, null, null, true]</span><br><span class="line"></span><br><span class="line">解释</span><br><span class="line">FrequencyTracker frequencyTracker = new FrequencyTracker();</span><br><span class="line">frequencyTracker.add(3); // 数据结构现在包含 [3]</span><br><span class="line">frequencyTracker.add(3); // 数据结构现在包含 [3, 3]</span><br><span class="line">frequencyTracker.hasFrequency(2); // 返回 true ，因为 3 出现 2 次</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入</span><br><span class="line">[&quot;FrequencyTracker&quot;, &quot;add&quot;, &quot;deleteOne&quot;, &quot;hasFrequency&quot;]</span><br><span class="line">[[], [1], [1], [1]]</span><br><span class="line">输出</span><br><span class="line">[null, null, null, false]</span><br><span class="line"></span><br><span class="line">解释</span><br><span class="line">FrequencyTracker frequencyTracker = new FrequencyTracker();</span><br><span class="line">frequencyTracker.add(1); // 数据结构现在包含 [1]</span><br><span class="line">frequencyTracker.deleteOne(1); // 数据结构现在为空 []</span><br><span class="line">frequencyTracker.hasFrequency(1); // 返回 false ，因为数据结构为空</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入</span><br><span class="line">[&quot;FrequencyTracker&quot;, &quot;hasFrequency&quot;, &quot;add&quot;, &quot;hasFrequency&quot;]</span><br><span class="line">[[], [2], [3], [1]]</span><br><span class="line">输出</span><br><span class="line">[null, false, null, true]</span><br><span class="line"></span><br><span class="line">解释</span><br><span class="line">FrequencyTracker frequencyTracker = new FrequencyTracker();</span><br><span class="line">frequencyTracker.hasFrequency(2); // 返回 false ，因为数据结构为空</span><br><span class="line">frequencyTracker.add(3); // 数据结构现在包含 [3]</span><br><span class="line">frequencyTracker.hasFrequency(1); // 返回 true ，因为 3 出现 1 次</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= number &lt;= 105</code></li>
+<li><code>1 &lt;= frequency &lt;= 105</code></li>
+<li>最多调用 <code>add</code>、<code>deleteOne</code> 和 <code>hasFrequency</code> <strong>共计</strong> <code>2 * 105</code> 次</li>
+</ul>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>由题设可知，题目要求对值进行跟踪，并保留相应的频率。</p>
+<p>那么建立哈希表1用于保留对数值的追踪，建立哈希表2以数值为索引，跟踪访问频率。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/20/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-1969-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E9%9D%9E%E9%9B%B6%E4%B9%98%E7%A7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
+      <meta itemprop="name" content="sunsun">
+      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sunsun'blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/03/20/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-1969-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E9%9D%9E%E9%9B%B6%E4%B9%98%E7%A7%AF/" class="post-title-link" itemprop="url">每日一题.1969. 数组元素的最小非零乘积</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-03-20 10:39:05" itemprop="dateCreated datePublished" datetime="2024-03-20T10:39:05+08:00">2024-03-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/19/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-1793-%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%86%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -761,74 +901,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/re-sunsun/image/master/blog/head/newhead.jpg">
-      <meta itemprop="name" content="sunsun">
-      <meta itemprop="description" content="Once,there was an explosion…A bang which gave birth to time and space Once, there was an explosion…A bang which set a planet spinning in that space. Once,there was an explosion…A bang which gave rice to life as we know itAnd then came the next explosion。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunsun'blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">.DS_Store泄漏</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-03-24 14:34:39 / 修改时间：14:55:42" itemprop="dateCreated datePublished" datetime="2022-03-24T14:34:39+08:00">2022-03-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -895,7 +972,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
