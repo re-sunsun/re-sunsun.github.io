@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>todolist-2023</title>
-    <url>/2023/01/01/todolist-2023/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>.DS_Store泄漏</title>
     <url>/2022/03/24/DS-Store%E6%B3%84%E6%BC%8F/</url>
     <content><![CDATA[<h1 id="泄漏起因"><a href="#泄漏起因" class="headerlink" title="泄漏起因"></a>泄漏起因</h1><p>起因在于我把博客的图床的back cup由win迁移至了macos，重新上传时图方便采用了<code>add .</code>命令，而后在github中发现了.DS_Store文件</p>
@@ -24,81 +19,6 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo .DS_Store &gt;&gt; ~/.gitignore_global</span><br><span class="line">git config --global core.excludesfile ~/.gitignore_global</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>R</title>
-    <url>/2022/04/04/R/</url>
-    <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
-<blockquote>
-<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
-<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>基本的三种数据类型</strong></p>
-<ul>
-<li><p>数字</p>
-<p>分为一般型（123）与科学计数法（1.23e2）</p>
-</li>
-<li><p>逻辑</p>
-<p><strong>TRUE</strong> 和 <strong>FALSE</strong>，R语言区分大小写</p>
-</li>
-<li><p>文本</p>
-<p>与字符串差不多，可以用单引号定义</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;r&#x27;</span><span class="operator">==</span><span class="string">&quot;r&quot;</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="literal">TRUE</span></span><br></pre></td></tr></table></figure>
-
-<p>有一说一，这种‘放纵’的风格我不太喜欢</p>
-</li>
-</ul>
-<p><strong>按对象类型分-六种</strong></p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2020/07/52988954-D570-42FD-9CFC-90CD78D361C3.jpg" alt="借用一下菜鸟的图"></p>
-<h2 id="向量-vector"><a href="#向量-vector" class="headerlink" title="向量-vector"></a>向量-vector</h2><p>向量从数据结构上看就是一个线性表，可以看成一个数组。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span></span><br><span class="line">b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">a<span class="operator">+</span>b</span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">8</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-<p><code>c()</code>函数的作用是创建一个向量，可以看到向量可以直接相加，有len的限制，不一致会Panic。</p>
-<h3 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h3><p><strong>下标</strong></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">,</span><span class="number">20</span><span class="punctuation">,</span><span class="number">30</span>，<span class="number">40</span>，<span class="number">50</span><span class="punctuation">)</span></span><br><span class="line">a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<p>R中的下标不是偏移量而是第几个</p>
-<p><strong>取一部分</strong></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">取一段</span><br><span class="line">a<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">20</span> <span class="number">30</span> <span class="number">40</span></span><br><span class="line">取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">30</span> <span class="number">50</span></span><br><span class="line">不取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span> <span class="number">40</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>标量运算</strong></p>
-]]></content>
-      <tags>
-        <tag>R</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>全局唯一标识分区表GPT</title>
-    <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
-    <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
-<p>小明一直以来都致力于支持一线老师们的演艺事业，多年来存下来超多的演艺资源。</p>
-<p>这也导致老师们纷纷抱怨道，现在的房子太小，太拥挤。于是小明购入了一块4T的硬盘，可是装上硬盘以后坏了。原本4T的硬盘现在只有2T的使用率，完蛋，这个问题不解决的话老师们住哪里?</p>
-</blockquote>
-<span id="more"></span>
-
-<p>MBR系统中通过四个字节来表明分区的扇区总数，经过计算可以得知，以512字节的扇区为基准。MBR系统所支持的最大磁盘容量是2T。</p>
-<p>如何突破这一上线？</p>
-<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区数 ✖️ 扇区大小</p>
-<p>想要提高最大容量就可以从这两方面入手。</p>
-<h2 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h2><p>根据几个古早的规定协议，扇区的大小被约定为512字节</p>
-<blockquote>
-<p>1956年由industry trade organization, International Disk Drive Equipment和Materials Association三家机构确定的行业标准</p>
-<p>有时代和技术的限制，因为磁盘技术发展初期，存储容量非常小。512字节的扇区也够用，但是随着时代的发展，512字节大小的扇区（Sector）明显太小了，由于每个扇区（Sector）还要存放很多其他信息，因此增大sector size可以降低扇区（Sector）的数量，从而提高实际存储量，同时降低了差错校验等很多CPU计算量。但遗憾的是<strong>由于这个标准太根深蒂固，要想改变一些底层代码或架构势必非常困难，所以现在4KB扇区硬盘暂时还没有全部普及</strong>。</p>
-</blockquote>
-<p>现在市面上2T以上的硬盘基本上都是以4KB做为扇区大小。</p>
-<p>你也可以通过简单的指令查看自己的硬盘的情况，以macos举例</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br><span class="line">diskutil info &#123;location of your disk&#125;</span><br><span class="line"></span><br><span class="line">Device Block Size:         512 Bytes</span><br></pre></td></tr></table></figure>
-
-<h2 id="扇区数"><a href="#扇区数" class="headerlink" title="扇区数"></a>扇区数</h2><p>MBR系统有四个字节用于表明扇区数量，也就是2^32。毫无疑问要突破这种限制我们需要一个新的系统</p>
-<blockquote>
-<p>全局唯一标识分区表（GUID Partition Table，缩写：GPT）是指全局唯一标示磁盘分区表格式。它是可扩展固件接口（EFI）标准（被Intel用于替代个人计算机的BIOS）的一部分，<strong>被用于替代BIOS系统中的以32bits来存储逻辑块地址和大小信息的主引导记录（MBR）分区表</strong>。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>磁盘</tag>
-      </tags>
   </entry>
   <entry>
     <title>fyne</title>
@@ -309,6 +229,102 @@
       </tags>
   </entry>
   <entry>
+    <title>R</title>
+    <url>/2022/04/04/R/</url>
+    <content><![CDATA[<p>R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。</p>
+<blockquote>
+<p>尽管很不情愿学习R，甚至连助教也表示自己不会R更倾向于用py处理数据，但是为了所谓的“与国际接轨”课程还是稍微学一下吧114514</p>
+<p>毕竟作为一名成熟的cv(ctrl cv)工程师，应该要能在短时间上手一门语言</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>基本的三种数据类型</strong></p>
+<ul>
+<li><p>数字</p>
+<p>分为一般型（123）与科学计数法（1.23e2）</p>
+</li>
+<li><p>逻辑</p>
+<p><strong>TRUE</strong> 和 <strong>FALSE</strong>，R语言区分大小写</p>
+</li>
+<li><p>文本</p>
+<p>与字符串差不多，可以用单引号定义</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;r&#x27;</span><span class="operator">==</span><span class="string">&quot;r&quot;</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span><span class="literal">TRUE</span></span><br></pre></td></tr></table></figure>
+
+<p>有一说一，这种‘放纵’的风格我不太喜欢</p>
+</li>
+</ul>
+<p><strong>按对象类型分-六种</strong></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/07/52988954-D570-42FD-9CFC-90CD78D361C3.jpg" alt="借用一下菜鸟的图"></p>
+<h2 id="向量-vector"><a href="#向量-vector" class="headerlink" title="向量-vector"></a>向量-vector</h2><p>向量从数据结构上看就是一个线性表，可以看成一个数组。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">)</span></span><br><span class="line">b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">a<span class="operator">+</span>b</span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">8</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p><code>c()</code>函数的作用是创建一个向量，可以看到向量可以直接相加，有len的限制，不一致会Panic。</p>
+<h3 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h3><p><strong>下标</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">,</span><span class="number">20</span><span class="punctuation">,</span><span class="number">30</span>，<span class="number">40</span>，<span class="number">50</span><span class="punctuation">)</span></span><br><span class="line">a<span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>R中的下标不是偏移量而是第几个</p>
+<p><strong>取一部分</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">取一段</span><br><span class="line">a<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">20</span> <span class="number">30</span> <span class="number">40</span></span><br><span class="line">取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">10</span> <span class="number">30</span> <span class="number">50</span></span><br><span class="line">不取某几个</span><br><span class="line">a<span class="punctuation">[</span><span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">3</span><span class="punctuation">,</span><span class="operator">-</span><span class="number">5</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="number">20</span> <span class="number">40</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>标量运算</strong></p>
+]]></content>
+      <tags>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全局唯一标识分区表GPT</title>
+    <url>/2022/04/08/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E5%88%86%E5%8C%BA%E8%A1%A8GPT/</url>
+    <content><![CDATA[<h1 id="给老师们换个大房子"><a href="#给老师们换个大房子" class="headerlink" title="给老师们换个大房子"></a>给老师们换个大房子</h1><blockquote>
+<p>小明一直以来都致力于支持一线老师们的演艺事业，多年来存下来超多的演艺资源。</p>
+<p>这也导致老师们纷纷抱怨道，现在的房子太小，太拥挤。于是小明购入了一块4T的硬盘，可是装上硬盘以后坏了。原本4T的硬盘现在只有2T的使用率，完蛋，这个问题不解决的话老师们住哪里?</p>
+</blockquote>
+<span id="more"></span>
+
+<p>MBR系统中通过四个字节来表明分区的扇区总数，经过计算可以得知，以512字节的扇区为基准。MBR系统所支持的最大磁盘容量是2T。</p>
+<p>如何突破这一上线？</p>
+<p>通过刚才对计算我们可以推出：最大容量 &#x3D; 最大扇区数 ✖️ 扇区大小</p>
+<p>想要提高最大容量就可以从这两方面入手。</p>
+<h2 id="扇区大小"><a href="#扇区大小" class="headerlink" title="扇区大小"></a>扇区大小</h2><p>根据几个古早的规定协议，扇区的大小被约定为512字节</p>
+<blockquote>
+<p>1956年由industry trade organization, International Disk Drive Equipment和Materials Association三家机构确定的行业标准</p>
+<p>有时代和技术的限制，因为磁盘技术发展初期，存储容量非常小。512字节的扇区也够用，但是随着时代的发展，512字节大小的扇区（Sector）明显太小了，由于每个扇区（Sector）还要存放很多其他信息，因此增大sector size可以降低扇区（Sector）的数量，从而提高实际存储量，同时降低了差错校验等很多CPU计算量。但遗憾的是<strong>由于这个标准太根深蒂固，要想改变一些底层代码或架构势必非常困难，所以现在4KB扇区硬盘暂时还没有全部普及</strong>。</p>
+</blockquote>
+<p>现在市面上2T以上的硬盘基本上都是以4KB做为扇区大小。</p>
+<p>你也可以通过简单的指令查看自己的硬盘的情况，以macos举例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">diskutil list</span><br><span class="line">diskutil info &#123;location of your disk&#125;</span><br><span class="line"></span><br><span class="line">Device Block Size:         512 Bytes</span><br></pre></td></tr></table></figure>
+
+<h2 id="扇区数"><a href="#扇区数" class="headerlink" title="扇区数"></a>扇区数</h2><p>MBR系统有四个字节用于表明扇区数量，也就是2^32。毫无疑问要突破这种限制我们需要一个新的系统</p>
+<blockquote>
+<p>全局唯一标识分区表（GUID Partition Table，缩写：GPT）是指全局唯一标示磁盘分区表格式。它是可扩展固件接口（EFI）标准（被Intel用于替代个人计算机的BIOS）的一部分，<strong>被用于替代BIOS系统中的以32bits来存储逻辑块地址和大小信息的主引导记录（MBR）分区表</strong>。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>磁盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>todolist-2023</title>
+    <url>/2023/01/01/todolist-2023/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>每日一题.1969. 数组元素的最小非零乘积</title>
+    <url>/2024/03/20/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-1969-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E9%9D%9E%E9%9B%B6%E4%B9%98%E7%A7%AF/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日一题.2617.网格图中最少访问的格子数</title>
+    <url>/2024/03/22/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2617-%E7%BD%91%E6%A0%BC%E5%9B%BE%E4%B8%AD%E6%9C%80%E5%B0%91%E8%AE%BF%E9%97%AE%E7%9A%84%E6%A0%BC%E5%AD%90%E6%95%B0/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>每日一题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日一题.2671.频率跟踪器</title>
     <url>/2024/03/21/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-2671-%E9%A2%91%E7%8E%87%E8%B7%9F%E8%B8%AA%E5%99%A8/</url>
     <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>请你设计并实现一个能够对其中的值进行跟踪的数据结构，并支持对频率相关查询进行应答。</p>
@@ -347,14 +363,6 @@
     <content><![CDATA[<h1 id="head-of-a-go-file"><a href="#head-of-a-go-file" class="headerlink" title="head of a go file"></a>head of a go file</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// @program:     $&#123;PROJECT_NAME&#125;</span><br><span class="line">// @file:        $&#123;FILE_NAME&#125;</span><br><span class="line">// @author:      sun sun</span><br><span class="line">// @create:      $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">// @description: </span><br><span class="line"></span><br><span class="line">package $&#123;GO_PACKAGE_NAME&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>每日一题.1969. 数组元素的最小非零乘积</title>
-    <url>/2024/03/20/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-1969-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E9%9D%9E%E9%9B%B6%E4%B9%98%E7%A7%AF/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>每日一题</tag>
-      </tags>
   </entry>
   <entry>
     <title>计算机是如何启动的?</title>
